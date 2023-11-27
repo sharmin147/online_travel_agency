@@ -3,20 +3,24 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <form action="{{ route('bookings.update', $bookings->id) }}" method="post">
+            <form action="{{ route('payment.update', payment->id) }}" method="post">
                 @csrf
                 @method('PATCH')
                  <div class="form-group">
                     <label for="customer_id">Customer Id</label>
-                    <input type="number" name="customer_id" value="{{ $bookings->customer_id }}" class="form-control">
+                    <input type="number" name="customer_id" value="{{ $payment->customer_id }}" class="form-control">
                 </div>
                   <div class="form-group">
-                    <label for="flight_id">Flight Id</label>
-                    <input type="text" name="flight_id" value="{{ $bookings->flight_id }}" class="form-control">
+                    <label for="amount">Amount</label>
+                    <input type="number" name="amount" value="{{ $payment->amount }}" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="seat_id">Seat Id</label>
-                    <input type="text" name="seat_id" value="{{ $bookings->seat_id }}" class="form-control">
+                    <label for="payment_method">Pay Method</label>
+                    <input type="text" name="payment_method" value="{{ $payment->payment_method}}" class="form-control">
+                </div>
+                 <div class="form-group">
+                    <label for="transation_id">Trans Id</label>
+                    <input type="integer" name="transation_id" value="{{ $payment->pransation_id}}" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="payment_status">Payment Status</label>
@@ -26,12 +30,13 @@
                         <option value="three" {{ $bookings->payment_status == "three" ? "selected" : "" }}>Failed</option>
                     </select>
                 </div>
-              <div class="form-group">
-                    <label for="status">Status</label>
-                    <select name="status" id="status" class="form-control">
-                        <option value="1" {{ $flight_class->rstatus == "Accept" ? "selected" : "" }}>Accept</option>
-                        <option value="0" {{ $flight_class->rstatus == "Pending" ? "selected" : "" }}>Pending</option>
-                    </select>
+                 <div class="form-group">
+                    <label for="payment_date">Notes</label>
+                    <input type="date" name="payment_date" value="{{ $payment->payment_date}}" class="form-control">
+                </div>
+               <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <input type="text" name="notes" value="{{ $payment->notes}}" class="form-control">
                 </div>
                 <button class="btn btn-primary" type="submit">Save</button>
             </form>

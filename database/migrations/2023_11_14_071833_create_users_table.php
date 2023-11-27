@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('contact_no_en')->unique()->nullable();
             $table->string('contact_no_bn')->unique()->nullable();
-            $table->unsignedBigInteger('role_id')->index();
+            $table->integer('role_id')->index();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->string('password');
             $table->string('language')->default('en');

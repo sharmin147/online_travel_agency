@@ -4,17 +4,18 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-         @if(session()->has('message'))
-         {{session()->get('message')}}
-         @endif
-        <div>
-               <div class="mb-3">
-                <label for="searchCustomer" class="form-label" style="color: green;"><h2>Customers List</h2></label><br><br>
-                </div>
-                  <button class="btn btn-primary pull-right fs-1" onclick="window.location.href='{{  route('customers.create') }}'">
-                  <i class="fa fa-plus"></i>Add Customers
-                  </button>
-                </div>
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+             @endif
+               <div class="mb-3" style="color: green;">
+                   <h2>Customer List</h2>
+               </div>
+               <a href="{{ route('customers.create') }}" class="btn btn-primary">
+                  <i class="fa fa-plus"></i> Add Bookings
+              </a>
+            
             <table class="table">
                 <tr>
                     <th style="color: green;">ID</th>

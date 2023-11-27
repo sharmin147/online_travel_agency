@@ -146,11 +146,11 @@
          </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="{{route('payment.index')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Form element</span>
+              <span class="menu-title">Payments</span>
             </a>
           </li>
           <li class="nav-item menu-items">

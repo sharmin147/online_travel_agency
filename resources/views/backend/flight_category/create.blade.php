@@ -14,9 +14,9 @@
                     <option value="four">Group Flight</option>
                 </select>
             </div>
-          <div class="form-group">
-            <label for="description">Description</label>
-            <textarea name="description" id="description" class="form-control"></textarea>
+            <div class="form-group">
+              <label for="description">Description</label>
+               <textarea name="description" id="description" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
@@ -34,7 +34,7 @@
                     <option value="0">No</option>
                 </select>
             </div>
-            
+
             <button class="btn btn-primary" type="submit">Save</button>
         </form>
     </div>

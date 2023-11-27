@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('flight_classes', function (Blueprint $table) {
+        Schema::create('airplanes', function (Blueprint $table) {
             $table->id();
-            $table->string('class_name', 255)->nullable();
-            $table->decimal('price', 10, 2)->nullable();
-            $table->integer('status')->nullable();
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('flight_classes');
+        Schema::dropIfExists('airplanes');
     }
 };

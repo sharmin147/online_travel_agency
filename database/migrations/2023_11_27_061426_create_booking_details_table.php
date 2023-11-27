@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('flight_classes', function (Blueprint $table) {
+        Schema::create('booking_details', function (Blueprint $table) {
             $table->id();
-            $table->string('class_name', 255)->nullable();
-            $table->decimal('price', 10, 2)->nullable();
-            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('flight_classes');
+        Schema::dropIfExists('booking_details');
     }
 };

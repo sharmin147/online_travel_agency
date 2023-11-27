@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
            $table->string('category_name', 50)->default('default_value');
             $table->text('description')->nullable();
-            $table->decimal('price', 10, 2);
             $table->string('baggage_allowance', 100)->nullable();
             $table->boolean('refundable')->default(false);
             $table->softDeletes();

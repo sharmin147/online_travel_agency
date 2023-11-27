@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
             $table->integer('customer_id')->nullable();
             $table->integer('flight_id')->nullable();
-            $table->integer('seat_id')->nullable();
+            $table->date('booking_date')->nullable();
+            $table->decimal('amount',10,2)->nullable();
+            $table->decimal('discount',10,2)->nullable();
+            $table->decimal('vat',10,2)->nullable();
+            $table->decimal('total_amount',10,2)->nullable();
             $table->string('payment_status', 255)->nullable();
             $table->integer('status')->nullable();
             $table->timestamps();

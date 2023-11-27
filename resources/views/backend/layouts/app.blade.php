@@ -102,7 +102,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{route('dashboard')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -146,11 +146,11 @@
          </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('payment.index')}}">
+            <a class="nav-link" href="pages/forms/basic_elements.html">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Payments</span>
+              <span class="menu-title">Form element</span>
             </a>
           </li>
           <li class="nav-item menu-items">

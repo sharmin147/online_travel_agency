@@ -15,15 +15,15 @@
                <a href="{{ route('customers.create') }}" class="btn btn-primary">
                   <i class="fa fa-plus"></i> Add Bookings
               </a>
-            
+
             <table class="table">
                 <tr>
-                    <th style="color: green;">ID</th>
-                    <th style="color: green;">Customer Id</th>
-                    <th style="color: green;">First Name</th>
-                    <th style="color: green;">Last Name</th>
-                    <th style="color: green;">Email</th>
-                    <th style="color: green;">Action</th>
+                    <th style="color: green; font-size: 16px">ID</th>
+                    <th style="color: green; font-size: 16px">Customer Id</th>
+                    <th style="color: green; font-size: 16px">First Name</th>
+                    <th style="color: green; font-size: 16px">Last Name</th>
+                    <th style="color: green; font-size: 16px">Email</th>
+                    <th style="color: green; font-size: 16px">Action</th>
                 </tr>
                         @forelse($customers as $s)
                     <tr>

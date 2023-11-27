@@ -12,7 +12,7 @@ class FlightCategoryController extends Controller
      */
     public function index()
     {
-        $flight_category = FlightCategory::latest()->paginate(10); 
+        $flight_category = FlightCategory::latest()->paginate(6);
 
          return view('backend.flight_category.index', ['flight_category' => $flight_category]);
     }

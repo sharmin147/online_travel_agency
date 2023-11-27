@@ -18,14 +18,13 @@
                    <button class="btn btn-primary pull-right fs-1" onclick="window.location.href='{{  route('role.create') }}'">
                     <i class="fa fa-plus"></i> Add Role
                     </button>
-                  {{-- </div> --}}
-                  <table class="table table-bordered mb-0">
+                   <table class="table table-bordered mb-0">
                     <thead>
                         <tr>
-                            <th scope="col" style="color: green;">{{__('#SL')}}</th>
-                            <th scope="col" style="color: green;">{{__('Name')}}</th>
-                            <th scope="col" style="color: green;">{{__('Identity')}}</th>
-                            <th class="white-space-nowrap" style="color:green;">{{__('Action')}}</th>
+                            <th scope="col" style="color: green;font-size: 16px">{{__('#SL')}}</th>
+                            <th scope="col" style="color: green; font-size: 16px">{{__('Name')}}</th>
+                            <th scope="col" style="color: green;font-size: 16px">{{__('Identity')}}</th>
+                            <th class="white-space-nowrap" style="color:green;font-size: 16px">{{__('Action')}}</th>
                         </tr>
                     </thead>
                     <tbody>

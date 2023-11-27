@@ -12,7 +12,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-       $payments = Payment::latest()->paginate(7);
+       $payments = Payment::latest()->paginate(5);
         return view('backend.payment.index', ['payments' => $payments]);
     }
 
@@ -63,14 +63,14 @@ class PaymentController extends Controller
      */
     public function update(Request $request, Payment $payment)
     {
-        $payments->customer_id=$request->customer_id;
-         $payments->amount=$request->amount;
-         $payments->payment_method=$request->payment_method;
-         $payments->transaction_id=$request->transaction_id;
-         $payments->payment_status=$request->payment_status;
-         $payments->payment_date=$request->payment_date;
-         $payments->notes=$request->notes;
-         $payments->save();
+         $payment->customer_id=$request->customer_id;
+         $payment->amount=$request->amount;
+         $payment->payment_method=$request->payment_method;
+         $payment->transaction_id=$request->transaction_id;
+         $payment->payment_status=$request->payment_status;
+         $payment->payment_date=$request->payment_date;
+         $payment->notes=$request->notes;
+         $payment->save();
          return redirect('payment');
     }
 

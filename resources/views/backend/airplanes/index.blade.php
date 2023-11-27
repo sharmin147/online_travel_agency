@@ -11,17 +11,18 @@
         <div class="mb-3" style="color: green;">
             <h2>Airplane List</h2>
         </div>
-        <a href="{{ route('bookings.create') }}" class="btn btn-primary">
+        <a href="{{ route('airplanes.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Add Airplane
         </a>
         <table class="table">
             <thead>
                 <tr>
-                    <th style="color: green;">Id</th>
-                    <th style="color: green;">Name</th>
-                    <th style="color: green;">Description</th>
-                    <th style="color: green;">Actions</th>
+                    <th style="color: green; font-size: 16px; font-weight: bold;">Id</th>
+                    <th style="color: green; font-size: 16px; font-weight: bold;">Name</th>
+                    <th style="color: green; font-size: 16px; font-weight: bold;">Description</th>
+                    <th style="color: green; font-size: 16px; font-weight: bold;">Actions</th>
                 </tr>
+
             </thead>
             <tbody>
                 @forelse($airplanes as $b)

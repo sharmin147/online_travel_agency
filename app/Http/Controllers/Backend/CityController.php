@@ -12,7 +12,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        $city = City::latest()->paginate(7);
+        $city = City::latest()->paginate(5);
         return view('backend.city.index', ['city' => $city]);
     }
 

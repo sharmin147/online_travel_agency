@@ -17,9 +17,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th style="color: green;">Id</th>
-                    <th style="color: green;">Name</th>
-                    <th style="color: green;">Actions</th>
+                    <th style="color: green; font-size: 16px">Id</th>
+                    <th style="color: green; font-size: 16px">Name</th>
+                    <th style="color: green; font-size: 16px">Actions</th>
                 </tr>
             </thead>
             <tbody>

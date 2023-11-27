@@ -12,7 +12,7 @@ class SeatController extends Controller
      */
     public function index()
     {
-      $seats = Seat::latest()->paginate(7);
+      $seats = Seat::latest()->paginate(5);
      return view('backend.seats.index', ['seats' => $seats]);
     }
 
@@ -66,7 +66,7 @@ class SeatController extends Controller
      $seats->class_id = $request->class_id;
      $seats->status = $request->status;
      $seats->save();
-     
+
      return redirect('seats');
  }
 

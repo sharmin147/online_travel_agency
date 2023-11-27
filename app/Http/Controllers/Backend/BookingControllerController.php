@@ -12,7 +12,7 @@ class BookingControllerController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::latest()->paginate(7);
+        $bookings = Booking::latest()->paginate(5);
         return view('backend.bookings.index', ['bookings' => $bookings]);
     }
 

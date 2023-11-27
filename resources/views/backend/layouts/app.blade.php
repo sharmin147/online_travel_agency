@@ -36,7 +36,7 @@
         <link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}">
         <!-- End layout styles -->
         <link rel="shortcut icon" href="{{asset('public/assets/images/favicon.png')}}" />
-      
+
     </head>
    <body>
    <div class="container-scroller">
@@ -55,7 +55,7 @@
                   <img class="img-xs rounded-circle " src="{{asset('public/uploads/users/'.request()->session()->get('image'))}}" alt="">
                   <span class="count bg-success"></span>
                 </div>
-                
+
                 <div class="profile-name">
                   <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
                   <span>Gold Member</span>
@@ -146,15 +146,15 @@
          </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="{{route('city.index')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Form element</span>
+              <span class="menu-title">City</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="{{route('airplanes.index')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>

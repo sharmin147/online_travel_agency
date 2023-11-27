@@ -27,23 +27,20 @@
                   <i class="fa fa-plus"></i> Add Segment
                   </button>
                   </div>
-                  <br><br>
-
-
-                    <table class="table table-bordered mb-0">
+                  <br><table class="table table-bordered mb-0">
                         <thead>
                             <tr>
-                                <th scope="col" style="color: green;">{{__('#SL')}}</th>
-                                <th scope="col" style="color: green;">{{__('Id')}}</th>
-                                <th scope="col" style="color: green;">{{__('Flight Num')}}</th>
-                                <th scope="col" style="color: green;">{{__('Departure C')}}</th>
-                                <th scope="col" style="color: green;">{{__('Arrival C')}}</th>
-                                <th scope="col" style="color: green;">{{__('Departure D')}}</th>
-                                <th scope="col" style="color: green;">{{__('Arrival D')}}</th>
-                                <th scope="col" style="color: green;">{{__('Is direct Flight')}}</th>
-                                <th scope="col" style="color: green;">{{__('Connecion Airport')}}</th>
-                                <th scope="col" style="color: green;">{{__('Connection Duration')}}</th>
-                                <th scope="col" style="color: green;">{{__('Price')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('#SL')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Id')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Flight Num')}}</th>
+                                <th scope="col" style="color: green;font-size: 16px">{{__('Departure C')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Arrival C')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Departure D')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Arrival D')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Is direct Flight')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Connecion Airport')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Connection Duration')}}</th>
+                                <th scope="col" style="color: green; font-size: 16px">{{__('Price')}}</th>
 
                             </tr>
                         </thead>
@@ -56,10 +53,10 @@
                                 <td>{{$p->arrival_city}}</td>
                                 <td>{{$p->departure_date}}</td>
                                 <td>{{$p->arrival_date}}</td>
-                               <td>@if($p->is_direct_flight == 1) {{__('Yes') }} @else {{__('No') }} @endif</td>
-                               <td>{{$p->connection_airport}}</td>
-                               <td>{{$p->connection_duration}}</td>
-                               <td>{{$p->price}}</td>
+                                <td>@if($p->is_direct_flight == 1) {{__('Yes') }} @else {{__('No') }} @endif</td>
+                                <td>{{$p->connection_airport}}</td>
+                                <td>{{$p->connection_duration}}</td>
+                                <td>{{$p->price}}</td>
 
                                 <td class="white-space-nowrap">
                                    <button class="btn btn-sm btn-primary" onclick="window.location.href='{{ route('flight_segment.edit', encryptor('encrypt', $p->id)) }}'">

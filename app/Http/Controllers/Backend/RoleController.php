@@ -15,7 +15,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $data=Role::paginate(10);
+        $data=Role::paginate(5);
         return view('backend.role.index',compact('data'));
     }
 

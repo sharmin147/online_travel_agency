@@ -33,17 +33,17 @@
                     <table class="table table-bordered mb-0">
                         <thead>
                             <tr>
-                                <th scope="col" style="color: green;">{{__('#SL')}}</th>
-                                <th scope="col" style="color: green;">{{__('Id')}}</th>
-                                <th scope="col" style="color: green;">{{__('Flight Num')}}</th>
-                                <th scope="col" style="color: green;">{{__('Departure C')}}</th>
-                                <th scope="col" style="color: green;">{{__('Arrival C')}}</th>
-                                <th scope="col" style="color: green;">{{__('Departure D')}}</th>
-                                <th scope="col" style="color: green;">{{__('Arrival D')}}</th>
-                                <th scope="col" style="color: green;">{{__('Is direct Flight')}}</th>
-                                <th scope="col" style="color: green;">{{__('Connecion Airport')}}</th>
-                                <th scope="col" style="color: green;">{{__('Connection Duration')}}</th>
-                                <th scope="col" style="color: green;">{{__('Price')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('#SL')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Id')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Flight Num')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Departure C')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Arrival C')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Departure D')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Arrival D')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Is direct Flight')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Connecion Airport')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Connection Duration')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Price')}}</th>
 
                             </tr>
                         </thead>

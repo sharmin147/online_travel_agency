@@ -12,7 +12,7 @@ class FlightClassController extends Controller
      */
     public function index()
     {
-        $flight_class = FlightClass::latest()->paginate(7);
+        $flight_class = FlightClass::latest()->paginate(5);
 
         return view('backend.flight_class.index', ['flight_class' => $flight_class]);
     }

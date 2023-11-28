@@ -17,15 +17,15 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th style="color: green;">Id</th>
-                    <th style="color: green;">Customer Id</th>
-                    <th style="color: green;">Amount</th>
-                    <th style="color: green;">Pay Method</th>
-                    <th style="color: green;">Trans Id</th>
-                    <th style="color: green;">Pay Status</th>
-                     <th style="color: green;">Pay Date</th>
-                    <th style="color: green;">notes</th>
-                    <th style="color: green;">Actions</th>
+                    <th style="color: green;font-size: 20px;">Id</th>
+                    <th style="color: green;font-size: 20px;">Customer Id</th>
+                    <th style="color: green;font-size: 20px;">Amount</th>
+                    <th style="color: green;font-size: 20px;">Pay Method</th>
+                    <th style="color: green;font-size: 20px;">Trans Id</th>
+                    <th style="color: green;font-size: 20px;">Pay Status</th>
+                     <th style="color: green;font-size: 20px;">Pay Date</th>
+                    <th style="color: green;font-size: 20px;">notes</th>
+                    <th style="color: green;font-size: 20px;">Actions</th>
                 </tr>
             </thead>
             <tbody>

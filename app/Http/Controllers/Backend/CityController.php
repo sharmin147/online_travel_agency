@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Backend;
+use App\Http\Controllers\Controller;
 use App\Models\City;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,8 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+        $city = City::latest()->paginate(5);
+        return view('backend.city.index', ['city' => $city]);
     }
 
     /**
@@ -20,7 +21,7 @@ class CityController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.city.create');
     }
 
     /**
@@ -28,23 +29,24 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cityInstance = new City;
+        $cityInstance->name=$request->name;
+        $cityInstance->save();
+       return redirect('city');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(City $city)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(City $city)
+    public function edit(string $id)
     {
-        //
+          $city = City::find($id);
+         return view('backend.city.edit', compact('city'));
     }
 
     /**
@@ -52,7 +54,9 @@ class CityController extends Controller
      */
     public function update(Request $request, City $city)
     {
-        //
+        $city->name=$request->name;
+        $city->save();
+       return redirect('city');
     }
 
     /**
@@ -60,6 +64,10 @@ class CityController extends Controller
      */
     public function destroy(City $city)
     {
-        //
+        $city->delete();
+        return redirect('city')->with('message','Data deleted successfully');
     }
 }
+
+
+

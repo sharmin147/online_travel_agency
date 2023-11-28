@@ -20,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data=User::latest()->paginate(8);
+        $data=User::latest()->paginate(4);
         return view('backend.user.index',compact('data'));
     }
 

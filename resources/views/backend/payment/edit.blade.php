@@ -1,9 +1,9 @@
 @extends('backend.layouts.app')
-@section('pageHeading', 'Add New Bookings')
+@section('pageHeading', 'Add New Payments')
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <form action="{{ route('payment.update', payment->id) }}" method="post">
+           <form action="{{ route('payment.update', $payment->id) }}" method="post">
                 @csrf
                 @method('PATCH')
                  <div class="form-group">
@@ -31,7 +31,7 @@
                     </select>
                 </div>
                  <div class="form-group">
-                    <label for="payment_date">Notes</label>
+                    <label for="payment_date">Payment date</label>
                     <input type="date" name="payment_date" value="{{ $payment->payment_date}}" class="form-control">
                 </div>
                <div class="form-group">

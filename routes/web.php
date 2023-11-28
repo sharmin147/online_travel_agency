@@ -14,6 +14,9 @@ use App\Http\Controllers\Backend\BookingControllerController;
 use App\Http\Controllers\Backend\SeatController;
 use App\Http\Controllers\Backend\FlightSegmentController;
 use App\Http\Controllers\Backend\PaymentController;
+use App\Http\Controllers\Backend\AirplaneController;
+use App\Http\Controllers\Backend\CityController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +61,8 @@ Route::resource('bookings',BookingControllerController::class);
 Route::resource('seats',SeatController::class);
 Route::resource('flight_segment',FlightSegmentController::class);
 Route::resource('payment',PaymentController::class);
+Route::resource('airplanes',AirplaneController::class);
+Route::resource('city',CityController::class);
 
 // Route::get('/dashboard', function () {
 //     return view('welcome');

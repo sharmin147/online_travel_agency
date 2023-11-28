@@ -12,7 +12,7 @@ class FlightSegmentController extends Controller
      */
     public function index()
     {
-        $flight_segment = FlightSegment::latest()->paginate(10);
+        $flight_segment = FlightSegment::latest()->paginate(5);
 
          return view('backend.flight_segment.index', ['flight_segment' => $flight_segment]);
     }

@@ -18,12 +18,12 @@
             
             <table class="table">
                 <tr>
-                    <th style="color: green;">ID</th>
-                    <th style="color: green;">Customer Id</th>
-                    <th style="color: green;">First Name</th>
-                    <th style="color: green;">Last Name</th>
-                    <th style="color: green;">Email</th>
-                    <th style="color: green;">Action</th>
+                    <th style="color: green;font-size: 20px;">ID</th>
+                    <th style="color: green;font-size: 20px;">Customer Id</th>
+                    <th style="color: green;font-size: 20px;">First Name</th>
+                    <th style="color: green;font-size: 20px;">Last Name</th>
+                    <th style="color: green;font-size: 20px;">Email</th>
+                    <th style="color: green;font-size: 20px;">Action</th>
                 </tr>
                         @forelse($customers as $s)
                     <tr>

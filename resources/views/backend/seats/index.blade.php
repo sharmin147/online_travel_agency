@@ -17,12 +17,12 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th style="color: green;">Id</th>
-                    <th style="color: green;">Flight Id</th>
-                    <th style="color: green;">Category Id</th>
-                    <th style="color: green;">Class Id</th>
-                    <th style="color: green;">Status</th>
-                    <th style="color: green;">Actions</th>
+                    <th style="color: green;font-size: 20px;">Id</th>
+                    <th style="color: green;font-size: 20px;">Flight Id</th>
+                    <th style="color: green;font-size: 20px;">Category Id</th>
+                    <th style="color: green;font-size: 20px;">Class Id</th>
+                    <th style="color: green;font-size: 20px;">Status</th>
+                    <th style="color: green;font-size: 20px;">Actions</th>
                 </tr>
             </thead>
             <tbody>

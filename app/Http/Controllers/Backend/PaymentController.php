@@ -12,7 +12,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-       $payments = Payment::latest()->paginate(7);
+       $payments = Payment::latest()->paginate(5);
         return view('backend.payment.index', ['payments' => $payments]);
     }
 

@@ -33,14 +33,14 @@
                     <table class="table table-bordered mb-0">
                         <thead>
                             <tr>
-                                <th scope="col" style="color: green;">{{__('#SL')}}</th>
-                                <th scope="col" style="color: green;">{{__('Name')}}</th>
-                                <th scope="col" style="color: green;">{{__('Email')}}</th>
-                                <th scope="col" style="color: green;">{{__('Contact')}}</th>
-                                <th scope="col" style="color: green;">{{__('Role')}}</th>
-                                <th scope="col" style="color: green;">{{__('Image')}}</th>
-                                <th scope="col" style="color: green;">{{__('Status')}}</th>
-                                <th class="white-space-nowrap" style="color: green;">{{__('Action') }}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('#SL')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Name')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Email')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Contact')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Role')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Image')}}</th>
+                                <th scope="col" style="color: green;font-size: 20px;">{{__('Status')}}</th>
+                                <th class="white-space-nowrap" style="color: green;font-size: 20px;">{{__('Action') }}</th>
                             </tr>
                         </thead>
                         <tbody>

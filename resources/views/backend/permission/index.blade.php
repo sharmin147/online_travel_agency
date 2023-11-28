@@ -20,7 +20,7 @@
 </style>
 <div class="row">
     <div class="col-12">
-        <h2 class="custom-text-color">Grid View</h2>
+        <h2 class="custom-text-color"> View</h2>
     </div>
         <div class="col-12">
         <div class="card">

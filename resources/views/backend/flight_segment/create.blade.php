@@ -23,9 +23,9 @@
                                         <div class="form-group">
                                             <label for="departure_city" style="color: green;">Departure City</label>
                                             <input type="text" id="departure_city" class="form-control" value="{{ old('departure_city')}}" name="departure_city">
-                                            {{-- @if($errors->has('departure_city"'))
+                                            @if($errors->has('departure_city"'))
                                                 <span class="text-danger"> {{ $errors->first('departure_city"') }}</span>
-                                            @endif --}}
+                                            @endif 
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -59,7 +59,7 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="connection_airport" style="color: green;">Connection Airport</label>
-                                            <input type="text" id="connection_airport" class="form-control" value="{{ old('connection_airport')}}" name="connection_airport">
+                                            <input type="date" id="connection_airport" class="form-control" value="{{ old('connection_airport')}}" name="connection_airport">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">

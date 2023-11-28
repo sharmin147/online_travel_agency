@@ -14,8 +14,8 @@
         <a href="{{ route('bookings.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Add Bookings
         </a>
-        <table class="table">
-            <thead>
+        <table class="table table-bordered">
+            <thead class="text-center">
                 <tr>
                     <th style="color: green;font-size: 20px;">Id</th>
                     <th style="color: green;font-size: 20px;">Customer Id</th>
@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 @forelse($bookings as $b)
-                    <tr>
+                    <tr class="text-center">
                         <td>{{ $b->id }}</td>
                         <td>{{ $b->customer_id}}</td>
                         <td>{{ $b->flight_id}}</td>

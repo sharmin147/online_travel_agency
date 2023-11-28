@@ -10,11 +10,17 @@ class AirplaneController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+    // public function index()
+    // {
+    //      $airplanes = Airplane::latest()->paginate(4);
+    //     return view('backend.airplanes.index', ['bookings' => $airplanes]);
+    // }
 
+    public function index()
+{
+    $airplanes = Airplane::latest()->paginate(4); // Fetch airplane data from your model (e.g., Airplane)
+    return view('backend.airplanes.index', ['airplanes' => $airplanes]);
+}
     /**
      * Show the form for creating a new resource.
      */

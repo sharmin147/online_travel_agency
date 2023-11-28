@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('pageHeading', 'Add New airplane')
+@section('pageHeading', 'Add New Airplane')
 @section('content')
 <div class="row">
     <div class="col-sm-12">

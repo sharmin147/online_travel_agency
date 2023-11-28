@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="transaction_id">Trans Id</label>
-                <input type="number" name="transaction_id" id="transaction_id" class="form-control">
+                <input type="integer" name="transaction_id" id="transaction_id" class="form-control">
             </div>
             <div class="form-group">
                 <label for="payment_status">Payment Status</label>

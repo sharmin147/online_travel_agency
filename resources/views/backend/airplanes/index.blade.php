@@ -14,8 +14,8 @@
         <a href="{{ route('airplanes.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Add Airplane
         </a>
-        <table class="table">
-            <thead>
+        <table class="table table-bordered">
+            <thead class="text-center">
                 <tr>
                     <th style="color: green; font-size: 20px;">Id</th>
                     <th style="color: green; font-size: 20px;">Name</th>
@@ -25,7 +25,7 @@
             </thead>
             <tbody>
                 @forelse($airplanes as $b)
-                    <tr>
+                    <tr class="text-center">
                         <td>{{ $b->id }}</td>
                         <td>{{ $b->name}}</td>
                         <td>{{ $b->description}}</td>
@@ -48,8 +48,8 @@
                     </tr>
                 @endforelse
             </tbody>
-        </table>
-        {{ $airplanes->links() }}
+        </table><br><br>
+      {{ $airplanes->links() }}
     </div>
 </div>
 @endsection

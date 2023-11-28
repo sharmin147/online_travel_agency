@@ -150,15 +150,15 @@
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Form element</span>
+              <span class="menu-title">Payment</span>
             </a>
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('airplanes.index')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
+                <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Airplanes</span>
+              <span class="menu-title">Airplane</span>
             </a>
           </li>
           <li class="nav-item menu-items">

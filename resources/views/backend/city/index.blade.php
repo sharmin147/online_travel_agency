@@ -14,7 +14,7 @@
         <a href="{{ route('city.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Add City
         </a>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th style="color: green;font-size: 20px;">Id</th>

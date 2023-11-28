@@ -66,7 +66,7 @@ class SeatController extends Controller
      $seats->class_id = $request->class_id;
      $seats->status = $request->status;
      $seats->save();
-     
+
      return redirect('seats');
  }
 

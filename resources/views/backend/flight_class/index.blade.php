@@ -12,7 +12,7 @@
             <h2>Flight Class List</h2>
         </div>
         <a href="{{ route('flight_class.create') }}" class="btn btn-primary">
-            <i class="fa fa-plus"></i> Add Class 
+            <i class="fa fa-plus"></i> Add Class
         </a>
         <table class="table">
             <thead>

@@ -12,7 +12,7 @@ class CustomerController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    
+
     {
         $customers = Customer::latest()->paginate(3); // Fetch customers with pagination (10 records per page)
 

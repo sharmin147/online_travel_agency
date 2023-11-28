@@ -15,7 +15,7 @@
                <a href="{{ route('customers.create') }}" class="btn btn-primary">
                   <i class="fa fa-plus"></i> Add Bookings
               </a>
-            
+
             <table class="table">
                 <tr>
                     <th style="color: green;font-size: 20px;">ID</th>

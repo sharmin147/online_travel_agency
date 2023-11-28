@@ -12,8 +12,7 @@ class AirplaneController extends Controller
      */
     public function index()
     {
-        $airplanes = Airplane::latest()->paginate(5);
-        return view('backend.airplanes.index', ['airplanes' => $airplanes]);
+        //
     }
 
     /**
@@ -73,3 +72,4 @@ class AirplaneController extends Controller
         return redirect('airplanes')->with('message','Data deleted successfully');
     }
 }
+

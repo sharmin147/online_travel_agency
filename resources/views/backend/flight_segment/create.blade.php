@@ -59,13 +59,13 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="connection_airport" style="color: green;">Connection Airport</label>
-                                            <input type="date" id="connection_airport" class="form-control" value="{{ old('connection_airport')}}" name="connection_airport">
+                                            <input type="text" id="connection_airport" class="form-control" value="{{ old('connection_airport')}}" name="connection_airport">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="connection_airport" style="color: green;">Connection Duration</label>
-                                            <input type="date" id="connection_duration" class="form-control" value="{{ old('connection_duration')}}" name="connection_duration">
+                                            <input type="text" id="connection_duration" class="form-control" value="{{ old('connection_duration')}}" name="connection_duration">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">

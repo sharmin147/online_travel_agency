@@ -14,9 +14,9 @@
         <a href="{{ route('seats.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Add Seat
         </a>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th style="color: green;font-size: 20px;">Id</th>
                     <th style="color: green;font-size: 20px;">Flight Id</th>
                     <th style="color: green;font-size: 20px;">Category Id</th>

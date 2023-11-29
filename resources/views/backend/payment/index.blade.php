@@ -14,8 +14,8 @@
         <a href="{{ route('payment.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Add Payment
         </a>
-        <table class="table">
-            <thead>
+        <table class="table table-bordered">
+            <thead class="text_center">
                 <tr>
                     <th style="color: green;font-size: 20px;">Id</th>
                     <th style="color: green;font-size: 20px;">Customer Id</th>
@@ -30,7 +30,7 @@
             </thead>
             <tbody>
                 @forelse($payments as $b)
-                    <tr>
+                    <tr class="text_center">
                         <td>{{ $b->id }}</td>
                         <td>{{ $b->customer_id}}</td>
                         <td>{{ $b->amount}}</td>

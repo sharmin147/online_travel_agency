@@ -13,13 +13,13 @@
                    <h2>Customer List</h2>
                </div>
                <a href="{{ route('customers.create') }}" class="btn btn-primary">
-                  <i class="fa fa-plus"></i> Add Bookings
+                  <i class="fa fa-plus"></i> Add customers
               </a>
 
             <table class="table">
                 <tr>
                     <th style="color: green;font-size: 20px;">ID</th>
-                    <th style="color: green;font-size: 20px;">Customer Id</th>
+               
                     <th style="color: green;font-size: 20px;">First Name</th>
                     <th style="color: green;font-size: 20px;">Last Name</th>
                     <th style="color: green;font-size: 20px;">Email</th>
@@ -28,7 +28,7 @@
                         @forelse($customers as $s)
                     <tr>
                         <td>{{$s->id}}</td>
-                        <td>{{$s->customer_id}}</td>
+                    
                         <td>{{$s->first_name}}</td>
                         <td>{{$s->last_name}}</td>
                         <td>{{$s->email}}</td>

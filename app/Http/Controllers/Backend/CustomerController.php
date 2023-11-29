@@ -33,7 +33,7 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $customersInstance = new Customer; // Updated variable name
-        $customersInstance->customer_id=$request->customer_id;
+        // $customersInstance->customer_id=$request->customer_id;
         $customersInstance->first_name = $request->first_name;
         $customersInstance->last_name = $request->last_name;
         $customersInstance->email = $request->email;
@@ -67,7 +67,7 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        $customer->customer_id=$request->customer_id;
+        // $customer->customer_id=$request->customer_id;
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
         $customer->email = $request->email;

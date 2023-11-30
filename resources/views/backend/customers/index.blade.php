@@ -16,19 +16,17 @@
                   <i class="fa fa-plus"></i> Add customers
               </a>
 
-            <table class="table">
-                <tr>
+            <table class="table table-bordered">
+                <tr class="text-center">
                     <th style="color: green;font-size: 20px;">ID</th>
-               
                     <th style="color: green;font-size: 20px;">First Name</th>
                     <th style="color: green;font-size: 20px;">Last Name</th>
                     <th style="color: green;font-size: 20px;">Email</th>
                     <th style="color: green;font-size: 20px;">Action</th>
                 </tr>
                         @forelse($customers as $s)
-                    <tr>
+                    <tr class="text-center">
                         <td>{{$s->id}}</td>
-                    
                         <td>{{$s->first_name}}</td>
                         <td>{{$s->last_name}}</td>
                         <td>{{$s->email}}</td>

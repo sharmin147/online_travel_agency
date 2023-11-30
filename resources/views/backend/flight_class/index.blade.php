@@ -14,8 +14,8 @@
         <a href="{{ route('flight_class.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Add Class
         </a>
-        <table class="table">
-            <thead>
+        <table class="table table-bordered">
+            <thead class="text-center">
                 <tr>
                     <th style="color: green;font-size: 20px;">ID</th>
                     <th style="color: green;font-size: 20px;">Flight Id</th>
@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 @forelse($flight_class as $class)
-                    <tr>
+                    <tr class="text-center">
                         <td>{{ $class->id }}</td>
                         <td>{{ $class->flight_id}}</td>
                         <td>{{ $class->seat_id }}</td>

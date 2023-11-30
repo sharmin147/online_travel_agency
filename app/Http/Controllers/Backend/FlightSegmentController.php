@@ -31,6 +31,7 @@ class FlightSegmentController extends Controller
     public function store(Request $request)
     {
             $flight_segmentInstance = new FlightSegment;
+            $flight_segmentInstance->airplane_id=$request->airplane_id;
             $flight_segmentInstance->flight_number=$request->flight_number;
             $flight_segmentInstance->departure_city=$request->departure_city;
             $flight_segmentInstance->arrival_city=$request->arrival_city;
@@ -66,6 +67,7 @@ class FlightSegmentController extends Controller
      */
     public function update(Request $request, FlightSegment $flightSegment)
     {
+        $flight_segmentInstance->airplane_id=$request->airplane_id;
         $$flightSegment->flight_number=$request->flight_number;
         $flight_Segment->departure_city=$request->departure_city;
         $flight_Segment->arrival_city=$request->arrival_city;

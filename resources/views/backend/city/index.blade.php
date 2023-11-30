@@ -15,7 +15,7 @@
             <i class="fa fa-plus"></i> Add City
         </a>
         <table class="table table-bordered">
-            <thead>
+            <thead class="text-center">
                 <tr>
                     <th style="color: green;font-size: 20px;">Id</th>
                     <th style="color: green;font-size: 20px;">Name</th>
@@ -24,7 +24,7 @@
             </thead>
             <tbody>
                 @forelse($city as $b)
-                    <tr>
+                    <tr class="text-center">
                         <td>{{ $b->id }}</td>
                         <td>{{ $b->name}}</td>
                         <td>

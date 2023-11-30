@@ -29,8 +29,8 @@
               <div class="form-group">
                     <label for="status">Status</label>
                     <select name="status" id="status" class="form-control">
-                        <option value="1" {{ $flight_class->rstatus == "Accept" ? "selected" : "" }}>Accept</option>
-                        <option value="0" {{ $flight_class->rstatus == "Pending" ? "selected" : "" }}>Pending</option>
+                        <option value="1" {{ $bookings->status == "Accept" ? "selected" : "" }}>Accept</option>
+                        <option value="0" {{ $bookings->status == "Pending" ? "selected" : "" }}>Pending</option>
                     </select>
                 </div>
                 <button class="btn btn-primary" type="submit">Save</button>

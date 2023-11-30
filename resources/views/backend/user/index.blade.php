@@ -84,12 +84,12 @@
     </div>
 </section>
 
- {{-- <script>
+ <script>
     function deleteUser(userId) {
         if (confirm("Are you sure you want to delete this user?")) {
             event.preventDefault();
             document.getElementById('delete-form-' + userId).submit();
         }
     }
-</script> --}}
+</script> 
 @endsection

@@ -109,12 +109,28 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-            <li class="nav-item menu-items">
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('user.index')}}">
+          <span class="menu-icon">
+            <i class="mdi mdi-account-group"></i>
+           </span>
+           <span class="menu-title">Users</span>
+            </a>
+         </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('role.index')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Role</span>
+            </a>
+          </li>
+         <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
+                <i class="mdi mdi-calendar"></i>
               </span>
-              <span class="menu-title">Section</span>
+              <span class="menu-title">Booking Section</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
@@ -124,6 +140,8 @@
                 <li class="nav-item"> <a class="nav-link" href="{{route('flight_class.index')}}">Class</a></li>
                   <li class="nav-item"> <a class="nav-link" href="{{route('seats.index')}}">Seat</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('flight_segment.index')}}">Flight Segment</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{route('airplanes.index')}}">Airplane</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{route('city.index')}}">City</a></li>
               </ul>
             </div>
           </li>
@@ -135,38 +153,20 @@
            <span class="menu-title">Booking</span>
           </a>
          </li>
-
-           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('user.index')}}">
-          <span class="menu-icon">
-            <i class="mdi mdi-laptop"></i>
-           </span>
-         <span class="menu-title">User</span>
-          </a>
-         </li>
-
-          <li class="nav-item menu-items">
+         <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('payment.index')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
+                <i class="mdi mdi-book-open"></i>
               </span>
               <span class="menu-title">Payment</span>
             </a>
           </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('airplanes.index')}}">
+         <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/icons/mdi.html">
               <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
+                <i class="mdi mdi-credit-card"></i>
               </span>
-              <span class="menu-title">Airplane</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('city.index')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-              </span>
-              <span class="menu-title">City</span>
+              <span class="menu-title">Table</span>
             </a>
           </li>
           <li class="nav-item menu-items">

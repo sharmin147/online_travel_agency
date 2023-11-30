@@ -7,7 +7,12 @@
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" class="form-control">
+                <select name="name" id="name" class="form-control">
+                    <option value="one">Bangladesh</option>
+                    <option value="two">India</option>
+                    <option value="three">Dubai</option>
+                  
+                </select>
             </div>
            <button class="btn btn-primary" type="submit">Save</button>
         </form>

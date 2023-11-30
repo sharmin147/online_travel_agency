@@ -8,7 +8,11 @@
                 @method('PATCH')
                  <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" value="{{ $city->name }}" class="form-control">
+                   <select name="name" id="name" class="form-control">
+                        <option value="one" {{ $city->name == "one" ? "selected" : "" }}>Bangladesh</option>
+                        <option value="two" {{ $city->name == "two" ? "selected" : "" }}>India</option>
+                        <option value="three" {{ $city->name == "three" ? "selected" : "" }}>Dubai</option>
+                    </select>
                 </div>
                <button class="btn btn-primary" type="submit">Save</button>
             </form>

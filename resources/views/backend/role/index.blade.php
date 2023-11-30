@@ -33,18 +33,21 @@
                             <th scope="row">{{ ++$loop->index }}</th>
                             <td>{{$p->name}}</td>
                             <td>{{$p->identity}}</td>
-                            <td class="white-space-nowrap">
-                                <button class="btn btn-sm btn-primary" onclick="window.location.href='{{ route('role.edit', encryptor('encrypt', $p->id)) }}'">
-                                     <i class="fa fa-edit"></i>
-                                   </button>
-                                   <form id="form{{$p->id}}" action="{{ route('role.destroy', encryptor('encrypt', $p->id)) }}" method="post">
+                             <td class="white-space-nowrap">
+                                <a href="{{route('role.edit',encryptor('encrypt',$p->id))}}">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="{{route('permission.list',encryptor('encrypt',$p->id))}}">
+                                    <i class="fa fa-unlock"></i>
+                                </a>
+                                <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                                <form id="form{{$p->id}}" action="{{route('role.destroy',encryptor('encrypt',$p->id))}}" method="post">
                                     @csrf
                                     @method('delete')
-                                   <button type="submit" class="btn btn-sm btn-danger">
-                               <i class="fa fa-trash"></i>
-                               </button>
-                               </form>
-                             </td>
+                                </form>
+                            </td>
                         </tr>
                             @empty
                          <tr>

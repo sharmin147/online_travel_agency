@@ -12,7 +12,16 @@
                         <div class="card-body">
                             <form class="form" method="post" enctype="multipart/form-data" action="{{route('flight_segment.store')}}">
                                 @csrf
-                                <div class="row">
+                               <div class="row">
+                                 <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="airplane_id" style="color: green;">Airplan Id</label>
+                                            <input type="text" id="airplane_id" class="form-control" value="{{ old('airplane_id')}}" name="airplane_id">
+                                            @if($errors->has('airplane_id"'))
+                                                <span class="text-danger"> {{ $errors->first('dairplane_id"') }}</span>
+                                            @endif 
+                                        </div>
+                                    </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="flight_number" style="color: green;">Flight Num</label>

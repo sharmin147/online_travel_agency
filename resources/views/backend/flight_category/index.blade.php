@@ -14,9 +14,9 @@
         <a href="{{ route('flight_category.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Add Category Flight
         </a>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th style="color: green;font-size: 20px;">ID</th>
                     <th style="color: green;font-size: 20px;">Category Name</th>
                     <th style="color: green;font-size: 20px;">Description</th>
@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 @forelse($flight_category as $category)
-                    <tr>
+                    <tr class="text-center">
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->category_name }}</td>
                         <td>{{ $category->description }}</td>

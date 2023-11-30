@@ -1,4 +1,4 @@
-@extends('frontend.layout')
+@extends('frontenduser.layout')
  @section('content')
 <!-- Contact Start -->
  <!-- Header Start -->

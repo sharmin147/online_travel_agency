@@ -7,33 +7,33 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        return view('frontend.home');
+        return view('frontenduser.home');
     }
     public function about(){
-        return view('frontend.about');
+        return view('frontenduser.about');
     }
     public function pages(){
-        return view('frontend.pages');
+        return view('frontenduser.pages');
     }
     public function service(){
-        return view('frontend.service');
+        return view('frontenduser.service');
     }
     public function tour(){
-        return view('frontend.tour');
+        return view('frontenduser.tour');
     }
     public function testimonial(){
-        return view('frontend.testimonial');
+        return view('frontenduser.testimonial');
 
     }
     public function destination(){
-        return view('frontend.destination');
+        return view('frontenduser.destination');
 
     }
 
     public function contact(){
-        return view('frontend.contact');
+        return view('frontenduser.contact');
     }
     public function layout(){
-        return view('frontend.layout');
+        return view('frontenduser.layout');
     }
 }

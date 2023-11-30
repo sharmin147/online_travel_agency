@@ -1,6 +1,6 @@
-@extends('frontend.layout')
+@extends('frontenduser.layout')
  @section('content')
-  {{-- About Start --}}
+  
  <div class="container-fluid py-5">
     <div class="container pt-5">
         <div class="row">

@@ -1,5 +1,5 @@
 
-@extends('frontend.layout')
+@extends('frontenduser.layout')
  @section('content')
 
  <!-- Header Start -->

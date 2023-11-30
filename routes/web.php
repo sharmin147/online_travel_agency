@@ -16,7 +16,8 @@ use App\Http\Controllers\Backend\FlightSegmentController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\AirplaneController;
 use App\Http\Controllers\Backend\CityController;
-
+// use App\Http\Controllers\Frontend\AuthenticationnController;
+use App\Http\Controllers\frontenduser\auth\AuthenticationnController;
 
 
 
@@ -31,6 +32,7 @@ use App\Http\Controllers\Backend\CityController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// frontend
 Route::get('/', [HomeController::class, 'index']);
 Route::get('about',[HomeController::class,'about'])->name('about');
 Route::get('contact',[HomeController::class,'contact'])->name('contact');
@@ -40,11 +42,17 @@ Route::get('testimonial',[HomeController::class,'testimonial'])->name('testimoni
 Route::get('destination',[HomeController::class,'destination'])->name('destination');
 Route::get('tour',[HomeController::class,'tour'])->name('tour');
 
+// frontend user
+Route::get('/signup', [AuthenticationnController::class, 'signUpForm'])->name('frontenduser.auth.register');
+Route::post('/signup', [AuthenticationnController::class, 'signUpStore'])->name('frontenduser.auth.register.store');
+// Route::get('frontenduser/register', [AuthenticationnControllerh::class,'signInForm'])->name('frontenduser.login');
+// Route::get('frontenduser/register', [AuthenticationnController::class,'signOut'])->name('frontenduser.login.ckeck');
+
+// backend
 Route::get('register', [auth::class,'signUpForm'])->name('register');
 Route::post('register', [auth::class,'signUpStore'])->name('register.store');
 Route::get('login', [auth::class,'signInForm'])->name('login');
 Route::post('login', [auth::class,'signInCheck'])->name('login.check');
-
 Route::get('logout', [auth::class,'signOut'])->name('logOut');
 Route::middleware(['checkauth'])->prefix('admin')->group(function(){
 Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');

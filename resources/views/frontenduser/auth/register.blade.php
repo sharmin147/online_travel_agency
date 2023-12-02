@@ -61,8 +61,15 @@
                                  </small>
                                @endif
                             </div>
-                            
-                            <div>
+                              <div class="form-group">
+                                <input type="text" class="form-control p-4" placeholder="confirm password" required="" id="password_confirmation" name="password_confirmation"/>
+                                  @if($errors->has('password'))
+                                    <small class="d-block text-danger">
+                                 {{$errors->first('password')}}
+                                 </small>
+                               @endif
+                            </div>
+                               <div>
                                 <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
                             </div>
                         </form>

@@ -1,5 +1,5 @@
 @extends('backend.layouts.appAuth')
-
+@section('title','Sign in')
 @section('content')
 	<div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">

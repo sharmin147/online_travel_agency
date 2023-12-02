@@ -1,5 +1,3 @@
-
-
 @extends('frontenduser.layout.appAuth') 
 @section('title','Sign Up')
 @section('content')

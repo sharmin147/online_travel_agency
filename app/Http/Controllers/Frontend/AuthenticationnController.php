@@ -27,12 +27,12 @@ class AuthenticationnController extends Controller
             $user->contact=$request->contact;
             $user->password=Hash::make($request->password);
             if($user->save())
-                return redirect('login')->with('success','Successfully Registred');
+                return redirect('frontenduser.login')->with('success','Successfully Registred');
             else
-                return redirect('login')->with('danger','Please try again');
+                return redirect('frontenduser.login')->with('danger','Please try again');
         }catch(Exception $e){
-            //dd($e);
-            return redirect('login')->with('danger','Please try again');;
+            dd($e);
+            return redirect('frontenduser.login')->with('danger','Please try again');;
         }
     }
 
@@ -50,14 +50,14 @@ class AuthenticationnController extends Controller
                         $this->setSession($user);
                         return redirect()->route('dashboard')->with('success','Successfully login');
                     }else
-                        return redirect()->route('login')->with('error','Your phone number or password is wrong!');
+                        return redirect()->route('frontenduser.login')->with('error','Your phone number or password is wrong!');
                 }else
-                    return redirect()->route('login')->with('error','You are not active user. Please contact to authority!');
+                    return redirect()->route('frontenduser.login')->with('error','You are not active user. Please contact to authority!');
         }else
-                return redirect()->route('login')->with('error','Your phone number or password is wrong!');
+                return redirect()->route('frontenduser.login')->with('error','Your phone number or password is wrong!');
         }catch(Exception $e){
-            //dd($e);
-            return redirect()->route('login')->with('error','Your phone number or password is wrong!');
+            // dd($e);
+            return redirect()->route('frontenduser.login')->with('error','Your phone number or password is wrong!');
         }
     }
 

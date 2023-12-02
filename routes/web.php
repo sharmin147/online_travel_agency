@@ -16,8 +16,7 @@ use App\Http\Controllers\Backend\FlightSegmentController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\AirplaneController;
 use App\Http\Controllers\Backend\CityController;
-// use App\Http\Controllers\Frontend\AuthenticationnController;
-use App\Http\Controllers\frontenduser\auth\AuthenticationnController;
+use App\Http\Controllers\Frontend\AuthenticationnController;
 
 
 
@@ -43,10 +42,10 @@ Route::get('destination',[HomeController::class,'destination'])->name('destinati
 Route::get('tour',[HomeController::class,'tour'])->name('tour');
 
 // frontend user
-Route::get('/signup', [AuthenticationnController::class, 'signUpForm'])->name('frontenduser.auth.register');
-Route::post('/signup', [AuthenticationnController::class, 'signUpStore'])->name('frontenduser.auth.register.store');
-// Route::get('frontenduser/register', [AuthenticationnControllerh::class,'signInForm'])->name('frontenduser.login');
-// Route::get('frontenduser/register', [AuthenticationnController::class,'signOut'])->name('frontenduser.login.ckeck');
+Route::get('frontenduser/register', [AuthenticationnController::class, 'signUpForm'])->name('frontenduser.auth.register');
+Route::post('frontenduser/register', [AuthenticationnController::class, 'signUpStore'])->name('frontenduser.auth.register.store');
+Route::get('frontenduser/login', [AuthenticationnController::class,'signInCheck'])->name('frontenduser.auth.login');
+Route::post('frontenduser/login', [AuthenticationnController::class,'signOut'])->name('frontenduser.auth.login.ckeck');
 
 // backend
 Route::get('register', [auth::class,'signUpForm'])->name('register');

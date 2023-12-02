@@ -1,4 +1,4 @@
-@extends('frontenduser.layout')
+@extends('frontend.layout')
  @section('content')
   
  <div class="container-fluid py-5">

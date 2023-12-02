@@ -19,12 +19,12 @@
                     <i class="fa fa-plus"></i> Add Role
                     </button>
                    <table class="table table-bordered mb-0">
-                    <thead>
+                    <thead class="">
                         <tr>
-                            <th scope="col" style="color: green;font-size: 16px">{{__('#SL')}}</th>
-                            <th scope="col" style="color: green; font-size: 16px">{{__('Name')}}</th>
-                            <th scope="col" style="color: green;font-size: 16px">{{__('Identity')}}</th>
-                            <th class="white-space-nowrap" style="color:green;font-size: 16px">{{__('Action')}}</th>
+                            <th scope="col" style="color: green;font-size: 16px;">{{__('#SL')}}</th>
+                            <th scope="col" style="color: green; font-size: 16px;">{{__('Name')}}</th>
+                            <th scope="col" style="color: green;font-size: 16px;">{{__('Identity')}}</th>
+                            <th class="white-space-nowrap" style="color:green;font-size: 16px;">{{__('Action')}}</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -1,5 +1,4 @@
 @extends('backend.layouts.app')
-
 @section('title',trans('Role'))
 @section('page',trans('Create'))
 

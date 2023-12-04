@@ -14,11 +14,8 @@ return new class extends Migration
         Schema::create('flight_segments', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('airplane_id');
+            $table->bigInteger('flight_route_id');
             $table->string('flight_number', 10)->nullable();
-            $table->string('departure_city', 255)->nullable();
-            $table->string('arrival_city', 255)->nullable();
-            $table->string('departure_airport', 255)->nullable();
-            $table->string('arrival_airport', 255)->nullable();
             $table->date('departure_date')->nullable();
             $table->date('arrival_date')->nullable();
             $table->boolean('is_direct_flight');

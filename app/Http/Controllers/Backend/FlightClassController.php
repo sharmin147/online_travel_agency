@@ -32,8 +32,6 @@ class FlightClassController extends Controller
     {
 
             $flight_classInstance = new FlightClass;
-            $flight_classInstance->flight_id=$request->flight_id;
-            $flight_classInstance->seat_id=$request->seat_id;
             $flight_classInstance->class_name=$request->class_name;
             $flight_classInstance->price=$request->price;
             $flight_classInstance->status=$request->status;

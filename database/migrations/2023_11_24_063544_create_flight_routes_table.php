@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('flight_categories', function (Blueprint $table) {
+        Schema::create('flight_routes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->softDeletes();
+            $table->string('name', 255);
+            $table->bigInteger('departure_city');
+            $table->bigInteger('arrival_city');
+            $table->bigInteger('departure_airport');
+            $table->bigInteger('arrival_airport');
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('flight_categories');
+        Schema::dropIfExists('flight_routes');
     }
 };

@@ -31,11 +31,7 @@ class FlightCategoryController extends Controller
     public function store(Request $request)
     {
             $flight_categoryInstance = new FlightCategory;
-            $flight_categoryInstance->category_name=$request->category_name;
-            $flight_categoryInstance->description=$request->description;
-            $flight_categoryInstance->price=$request->price;
-            $flight_categoryInstance->baggage_allowance=$request->baggage_allowance;
-            $flight_categoryInstance->refundable=$request->refundable;
+            $flight_categoryInstance->name=$request->name;
             $flight_categoryInstance->save();
            return redirect('flight_category');
 
@@ -63,11 +59,7 @@ class FlightCategoryController extends Controller
      */
     public function update(Request $request, FlightCategory $flightCategory)
     {
-            $flightCategory->category_name=$request->category_name;
-            $flightCategory->description=$request->description;
-            $flightCategory->price=$request->price;
-            $flightCategory->baggage_allowance=$request->baggage_allowance;
-            $flightCategory->refundable=$request->refundable;
+            $flightCategory->name=$request->name;
             $flightCategory->save();
            return redirect('flight_category');
     }

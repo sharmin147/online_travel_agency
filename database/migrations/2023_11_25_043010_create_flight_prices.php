@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('flight_categories', function (Blueprint $table) {
+        Schema::create('flight_prices', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->softDeletes();
+            $table->bigInteger('flight_category_id')->nullable();
+            $table->bigInteger('flight_class_id')->nullable();
+            $table->bigInteger('flight_route_id')->nullable();
+            $table->decimal('price', 10, 2)->nullable();
+            $table->bigInteger('status')->nullable();
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('flight_categories');
+        Schema::dropIfExists('flight_classes');
     }
 };

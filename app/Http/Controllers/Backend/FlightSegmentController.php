@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\FlightSegment;
+use App\Models\Airplane;
+use App\Models\City;
+use App\Models\Ariport;
 use Illuminate\Http\Request;
 
 class FlightSegmentController extends Controller
@@ -22,7 +25,10 @@ class FlightSegmentController extends Controller
      */
     public function create()
     {
-        return view('backend.flight_segment.create');
+        $airplane = Airplane::get();
+        $city = City::get();
+        $airport = Ariport::get();
+        return view('backend.flight_segment.create',compact('airplane','city','airport'));
     }
 
     /**

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('pageHeading', 'Add New Booking')
+@section('pageHeading', 'Add New Seats')
 @section('content')
 <div class="row">
     <div class="col-sm-12">

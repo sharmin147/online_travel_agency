@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="form-group">
-                            <label for="name" style="color: green;">Route Name</label>
+                            <label for="name" style="color: green;">Name</label>
                             <input type="string" id="name" class="form-control" value="{{ old('name')}}" name="name">
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             </select>
                             @if($errors->has('departure_city"'))
                                 <span class="text-danger"> {{ $errors->first('departure_city"') }}</span>
-                            @endif 
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-6 col-12">
@@ -54,7 +54,7 @@
                             </select>
                             @if($errors->has('departure_airport"'))
                                 <span class="text-danger"> {{ $errors->first('departure_airport"') }}</span>
-                            @endif 
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-6 col-12">

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
-        
+
     }
 
     /**
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('flight_categories');
+        Schema::dropIfExists('flight_classes');
     }
 };

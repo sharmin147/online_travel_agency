@@ -21,7 +21,13 @@
                             </select>
                             @if($errors->has('airplane_id"'))
                                 <span class="text-danger"> {{ $errors->first('dairplane_id"') }}</span>
-                            @endif 
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="form-group">
+                            <label for="flight_route_id" style="color: green;">Flight Route id</label>
+                            <input type="string" id="flight_route_id" class="form-control" value="{{ old('flight_route_id')}}" name="flight_route_id">
                         </div>
                     </div>
                     <div class="col-md-6 col-12">
@@ -30,7 +36,7 @@
                             <input type="string" id="flight_number" class="form-control" value="{{ old('flight_number')}}" name="flight_number">
                         </div>
                     </div>
-                    <div class="col-md-6 col-12">
+                    {{-- <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="departure_city" style="color: green;">Departure City</label>
                             <select id="departure_city" onchange="checkairport(this)" class="form-control" name="departure_city">
@@ -42,10 +48,10 @@
                             </select>
                             @if($errors->has('departure_city"'))
                                 <span class="text-danger"> {{ $errors->first('departure_city"') }}</span>
-                            @endif 
+                            @endif
                         </div>
                     </div>
-                    <div class="col-md-6 col-12">
+                     <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="arrival_city" style="color: green;">Arrival City</label>
                             <select id="arrival_city" class="form-control" onchange="checkairport(this)" name="arrival_city">
@@ -56,7 +62,7 @@
                                 @endforelse
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="departure_airport" style="color: green;">Departure Airport</label>
@@ -69,7 +75,7 @@
                             </select>
                             @if($errors->has('departure_city"'))
                                 <span class="text-danger"> {{ $errors->first('departure_city"') }}</span>
-                            @endif 
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-6 col-12">

@@ -38,9 +38,10 @@ class FlightSegmentController extends Controller
     {
             $flight_segmentInstance = new FlightSegment;
             $flight_segmentInstance->airplane_id=$request->airplane_id;
+            $flight_segmentInstance->flight_route_id=$request->flight_route_id;
             $flight_segmentInstance->flight_number=$request->flight_number;
-            $flight_segmentInstance->departure_city=$request->departure_city;
-            $flight_segmentInstance->arrival_city=$request->arrival_city;
+            // $flight_segmentInstance->departure_city=$request->departure_city;
+            // $flight_segmentInstance->arrival_city=$request->arrival_city;
             $flight_segmentInstance->departure_date=$request->departure_date;
             $flight_segmentInstance->arrival_date=$request->arrival_date;
             $flight_segmentInstance->is_direct_flight=$request->is_direct_flight;
@@ -73,17 +74,18 @@ class FlightSegmentController extends Controller
      */
     public function update(Request $request, FlightSegment $flightSegment)
     {
-        $flight_segmentInstance->airplane_id=$request->airplane_id;
-        $$flightSegment->flight_number=$request->flight_number;
-        $flight_Segment->departure_city=$request->departure_city;
-        $flight_Segment->arrival_city=$request->arrival_city;
-        $flight_Segment->departure_date=$request->departure_date;
-        $flight_Segment->arrival_date=$request->arrival_date;
-        $flight_Segment->is_direct_flight=$request->is_direct_flight;
-        $flight_Segment->connection_airport=$request->connection_airport;
+        $flightSegment->airplane_id=$request->airplane_id;
+        $flightSegment->flight_route_id=$request->flight_route_id;
+        $flightSegment->flight_number=$request->flight_number;
+        // $flightSegment->departure_city=$request->departure_city;
+        // $flightSegment->arrival_city=$request->arrival_city;
+        $flightSegment->departure_date=$request->departure_date;
+        $flightSegment->arrival_date=$request->arrival_date;
+        $flightSegment->is_direct_flight=$request->is_direct_flight;
+        $flightSegment->connection_airport=$request->connection_airport;
         $flightSegment->connection_duration=$request->connection_duration;
-        $flight_Segment->price=$request->price;
-        $flight_Segment->save();
+        $flightSegment->price=$request->price;
+        $flightSegment->save();
        return redirect('flight_segment');
     }
 

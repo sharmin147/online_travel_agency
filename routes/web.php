@@ -17,8 +17,10 @@ use App\Http\Controllers\Backend\FlightRouteController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\AirplaneController;
 use App\Http\Controllers\Backend\CityController;
+use App\Http\Controllers\Backend\AirplaneSeatController;
+use App\Http\Controllers\Backend\AriportController;
+use App\Http\Controllers\Backend\FlightPriceController;
 use App\Http\Controllers\Frontend\AuthenticationnController;
-
 
 
 /*
@@ -76,7 +78,9 @@ Route::resource('flight_route',FlightRouteController::class);
 Route::resource('payment',PaymentController::class);
 Route::resource('airplanes',AirplaneController::class);
 Route::resource('city',CityController::class);
-
+Route::resource('airplane_seats',AirplaneSeatController::class);
+Route::resource('ariports',AriportController::class);
+Route::resource('flight_prices',FlightPriceController::class);
 // Route::get('/dashboard', function () {
 //     return view('welcome');
 // })->name('dashboard');

@@ -1,0 +1,36 @@
+@extends('backend.layouts.app')
+@section('pageHeading', 'Add New Flight Price')
+@section('content')
+<div class="row">
+    <div class="col-sm-12">
+        <form action="{{ route('flight_prices.store') }}" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="flight_category_id">Flight Category id</label>
+                <input type="integer" name="flight_category_id" id="flight_category_id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="flight_class_id">Flight Class id</label>
+                <input type="integer" name="flight_class_id" id="flight_class_id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="flight_route_id">Flight Route id</label>
+                <input type="integer" name="flight_route_id" id="flight_route_id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="decimal" name="price" id="price" class="form-control">
+            </div>
+           <div class="form-group">
+                <label for="status">Status</label>
+                <select name="status" id="status" class="form-control">
+                    <option value="1">Paid</option>
+                    <option value="0">Pending</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+    </div>
+</div>
+@endsection

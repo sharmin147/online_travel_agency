@@ -138,11 +138,14 @@
                 <li class="nav-item"> <a class="nav-link" href="{{route('customers.index')}}">Customers</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('airplanes.index')}}">Airplane</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('city.index')}}">City</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('flight_route.index')}}">Route</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('flight_route.index')}}">Flight Route</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('flight_category.index')}}">Category</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('flight_class.index')}}">Class</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('seats.index')}}">Seat</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('flight_segment.index')}}">Flight Segment</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('airplane_seats.index')}}">Airplane Seats</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('ariports.index')}}">Airports</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('flight_prices.index')}}">Flight Prices</a></li>
               </ul>
             </div>
           </li>

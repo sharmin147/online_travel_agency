@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\AirplaneSeat;
 use Illuminate\Http\Request;
@@ -30,7 +30,12 @@ class AirplaneSeatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $airplaneSeat = new AirplaneSeat;
+        $airplaneSeat->airplane_id=$request->airplane_id;
+        $airplaneSeat->flight_class_id=$request->flight_class_id;
+        $airplaneSeat->quantity=$request->quantity;
+        $airplaneSeat->save();
+       return redirect('airplane_seats');
     }
 
     /**
@@ -46,7 +51,7 @@ class AirplaneSeatController extends Controller
      */
     public function edit(AirplaneSeat $airplaneSeat)
     {
-        //
+        return view('backend.airplane_seats.edit', compact('airplaneSeat'));
     }
 
     /**
@@ -54,7 +59,11 @@ class AirplaneSeatController extends Controller
      */
     public function update(Request $request, AirplaneSeat $airplaneSeat)
     {
-        //
+        $airplaneSeat->airplane_id=$request->airplane_id;
+        $airplaneSeat->flight_class_id=$request->flight_class_id;
+        $airplaneSeat->quantity=$request->quantity;
+        $airplaneSeat->save();
+       return redirect('airplane_seats');
     }
 
     /**
@@ -62,6 +71,7 @@ class AirplaneSeatController extends Controller
      */
     public function destroy(AirplaneSeat $airplaneSeat)
     {
-        //
+        $airplaneSeat->delete();
+        return redirect('airplane_seats')->with('message','Data deleted successfully');
     }
 }

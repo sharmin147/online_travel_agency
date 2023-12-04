@@ -33,8 +33,8 @@
                                 <th scope="col" style="color: green;font-size: 20px;">{{__('#SL')}}</th>
                                 <th scope="col" style="color: green;font-size: 20px;">{{__('Id')}}</th>
                                 <th scope="col" style="color: green;font-size: 20px;">{{__('Flight Num')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Departure C')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Arrival C')}}</th>
+                                {{-- <th scope="col" style="color: green;font-size: 20px;">{{__('Departure C')}}</th> --}}
+                                {{-- <th scope="col" style="color: green;font-size: 20px;">{{__('Arrival C')}}</th> --}}
                                 <th scope="col" style="color: green;font-size: 20px;">{{__('Departure D')}}</th>
                                 <th scope="col" style="color: green;font-size: 20px;">{{__('Arrival D')}}</th>
                                 <th scope="col" style="color: green;font-size: 20px;">{{__('Is direct Flight')}}</th>
@@ -48,9 +48,10 @@
                             @forelse($flight_segment as $p)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
+                                <td>{{$p->flight_route_id}}</td>
                                 <td>{{$p->flight_number}}</td>
-                                <td>{{$p->departure_city}}</td>
-                                <td>{{$p->arrival_city}}</td>
+                                {{-- <td>{{$p->departure_city}}</td>
+                                <td>{{$p->arrival_city}}</td> --}}
                                 <td>{{$p->departure_date}}</td>
                                 <td>{{$p->arrival_date}}</td>
                                 <td>@if($p->is_direct_flight == 1) {{__('Yes') }} @else {{__('No') }} @endif</td>

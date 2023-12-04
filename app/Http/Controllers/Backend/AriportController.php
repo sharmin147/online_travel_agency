@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Backend;
+use App\Http\Controllers\Controller;
 use App\Models\Ariport;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,9 @@ class AriportController extends Controller
      */
     public function index()
     {
-        //
+        $ariport = Ariport::latest()->paginate(5);
+
+        return view('backend.ariports.index', ['ariports' => $ariport]);
     }
 
     /**
@@ -20,7 +22,7 @@ class AriportController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.ariports.create');
     }
 
     /**
@@ -28,7 +30,11 @@ class AriportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ariport = new Ariport;
+        $ariport->city_id=$request->city_id;
+        $ariport->name=$request->name;
+        $ariport->save();
+        return redirect('ariports');
     }
 
     /**
@@ -44,7 +50,7 @@ class AriportController extends Controller
      */
     public function edit(Ariport $ariport)
     {
-        //
+        return view('backend.ariports.edit', compact('ariport'));
     }
 
     /**
@@ -52,7 +58,10 @@ class AriportController extends Controller
      */
     public function update(Request $request, Ariport $ariport)
     {
-        //
+        $ariport->city_id=$request->city_id;
+        $ariport->name=$request->name;
+        $ariport->save();
+        return redirect('ariports');
     }
 
     /**
@@ -60,6 +69,7 @@ class AriportController extends Controller
      */
     public function destroy(Ariport $ariport)
     {
-        //
+        $ariport->delete();
+        return redirect('ariports')->with('message','Data deleted successfully');
     }
 }

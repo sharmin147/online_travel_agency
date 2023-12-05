@@ -3,6 +3,13 @@
 namespace App\Http\Controllers\frontenduser;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\City;
+use App\Models\FlightClass;
+use App\Models\FlightCategory;
+use App\Models\flightRoute;
+use App\Models\FlightSegment;
+use App\Models\AirplaneSeat;
+use App\Models\FlightPrice;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -21,7 +28,48 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('frontenduser.booking.create');
+        $city = City::get();
+        $fclass = FlightClass::get();
+        $fcategory = FlightCategory::get();
+        return view('frontenduser.booking.create',compact('city','fclass','fcategory'));
+    }
+    public function flight_search(Request $request){
+        $to = $request->to;
+        $from = $request->from;
+        $is_direct_flight = $request->is_direct_flight;
+        $travel_date = $request->travel_date;
+        $route=flightRoute::where('departure_city',$from)->where('arrival_city',$to)->pluck('id');
+        $flight=FlightSegment::whereIn('flight_route_id',$route)->where('is_direct_flight',$is_direct_flight)->where('departure_date',$travel_date);
+        $data="";
+        if($flight->count() > 0){
+            foreach($flight->get() as $f){
+                $data.="<option data-arrival='".$f->arrival_date."' value='".$f->id."'>".$f->flight_number."-".$f->airline."</option>";
+            }
+        }
+        print_r(json_encode($data));
+    }
+
+    public function flight_seat_search(Request $request){
+        $flight_id = $request->flight_id;
+        $flight_class_id = $request->flight_class_id;
+        $flight_category_id = $request->flight_category_id;
+        $flight_route_id = $request->flight_route_id;
+        $flight=FlightSegment::find($flight_id);
+
+        $seat=AirplaneSeat::where('airplane_id',$flight->airplane_id)->where('flight_class_id',$flight_class_id)->pluck('quantity')->toArray();
+        $booked=Booking::where('flight_id',$flight_id)->where('flight_class_id',$flight_class_id)->pluck('qty')->toArray();
+        if(count($booked) > 0)
+            $availabla_seat=($seat[0] - $booked[0]);
+        else
+            $availabla_seat=$seat[0];
+
+        $price=FlightPrice::where('flight_category_id',$flight_category_id)
+                            ->where('flight_class_id',$flight_class_id)
+                            ->where('flight_route_id',$flight->flight_route_id)
+                            ->pluck('price')->toArray();
+        $data=array("available"=>$availabla_seat,"price"=>$price[0]);
+        
+        print_r(json_encode($data));
     }
 
     /**

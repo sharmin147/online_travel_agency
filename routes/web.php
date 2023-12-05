@@ -99,5 +99,7 @@ Route::get('frontenduser/logout', [AuthController::class,'signOut'])->name('fron
 Route::middleware(['checkuser'])->prefix('user')->group(function(){
     Route::get('dashboard', [DashboardController::class,'index'])->name('user.dashboard');
     Route::resource('user-booking',userbooking::class);
+    Route::get('flight_search', [userbooking::class,'flight_search'])->name('flight_search');
+    Route::get('flight_seat_search', [userbooking::class,'flight_seat_search'])->name('flight_seat_search');
 });
 

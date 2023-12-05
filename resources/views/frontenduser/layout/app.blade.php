@@ -178,6 +178,7 @@
 
 <!-- Template Javascript -->
 <script src="{{asset('public/frontend/js/main.js')}}"></script>
+@stack('scripts')
 </body>
 
 </html>

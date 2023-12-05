@@ -10,7 +10,7 @@ use App\Http\Controllers\Backend\CustomerController as customer;
 use App\Http\Controllers\Backend\PermissionController as permission;
 use App\Http\Controllers\Backend\FlightCategoryController;
 use App\Http\Controllers\Backend\FlightClassController;
-use App\Http\Controllers\Backend\BookingControllerController;
+use App\Http\Controllers\Backend\BookingController as adminbooking;
 use App\Http\Controllers\Backend\SeatController;
 use App\Http\Controllers\Backend\FlightSegmentController;
 use App\Http\Controllers\Backend\FlightRouteController;
@@ -20,7 +20,10 @@ use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Backend\AirplaneSeatController;
 use App\Http\Controllers\Backend\AriportController;
 use App\Http\Controllers\Backend\FlightPriceController;
-use App\Http\Controllers\Frontend\AuthenticationnController;
+/* user part */
+use App\Http\Controllers\frontenduser\AuthController;
+use App\Http\Controllers\frontenduser\DashboardController;
+use App\Http\Controllers\frontenduser\BookingController as userbooking;
 
 
 /*
@@ -44,11 +47,6 @@ Route::get('testimonial',[HomeController::class,'testimonial'])->name('testimoni
 Route::get('destination',[HomeController::class,'destination'])->name('destination');
 Route::get('tour',[HomeController::class,'tour'])->name('tour');
 
-// frontend user
-Route::get('frontenduser/register', [AuthenticationnController::class, 'signUpForm'])->name('frontenduser.auth.register');
-Route::post('frontenduser/register', [AuthenticationnController::class, 'signUpStore'])->name('frontenduser.auth.register.store');
-Route::get('frontenduser/login', [AuthenticationnController::class,'signInCheck'])->name('frontenduser.auth.login');
-Route::post('frontenduser/login', [AuthenticationnController::class,'signOut'])->name('frontenduser.auth.login.ckeck');
 
 // backend
 Route::get('register', [auth::class,'signUpForm'])->name('register');
@@ -56,31 +54,34 @@ Route::post('register', [auth::class,'signUpStore'])->name('register.store');
 Route::get('login', [auth::class,'signInForm'])->name('login');
 Route::post('login', [auth::class,'signInCheck'])->name('login.check');
 Route::get('logout', [auth::class,'signOut'])->name('logOut');
+
+
 Route::middleware(['checkauth'])->prefix('admin')->group(function(){
-Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
+    Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
 });
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
-Route::resource('user', user::class);
-Route::resource('role', role::class);
-Route::get('permission/{role}', [permission::class,'index'])->name('permission.list');
-Route::post('permission/{role}', [permission::class,'save'])->name('permission.save');
+    Route::resource('user', user::class);
+    Route::resource('role', role::class);
+    Route::get('permission/{role}', [permission::class,'index'])->name('permission.list');
+    Route::post('permission/{role}', [permission::class,'save'])->name('permission.save');
+    Route::resource('customers', customer::class);
+    Route::resource('flight_category', FlightCategoryController::class);
+    Route::resource('flight_class', FlightClassController::class);
+    Route::resource('bookings',adminbooking::class);
+    Route::resource('seats',SeatController::class);
+    Route::resource('flight_segment',FlightSegmentController::class);
+    Route::resource('flight_route',FlightRouteController::class);
+    Route::resource('payment',PaymentController::class);
+    Route::resource('airplanes',AirplaneController::class);
+    Route::resource('city',CityController::class);
+    Route::resource('airplane_seats',AirplaneSeatController::class);
+    Route::resource('ariports',AriportController::class);
+    Route::resource('flight_prices',FlightPriceController::class);
 });
 // Route::get('/', function () {
 //     return view('layouts.home');
 // });
-Route::resource('customers', customer::class);
-Route::resource('flight_category', FlightCategoryController::class);
-Route::resource('flight_class', FlightClassController::class);
-Route::resource('bookings',BookingControllerController::class);
-Route::resource('seats',SeatController::class);
-Route::resource('flight_segment',FlightSegmentController::class);
-Route::resource('flight_route',FlightRouteController::class);
-Route::resource('payment',PaymentController::class);
-Route::resource('airplanes',AirplaneController::class);
-Route::resource('city',CityController::class);
-Route::resource('airplane_seats',AirplaneSeatController::class);
-Route::resource('ariports',AriportController::class);
-Route::resource('flight_prices',FlightPriceController::class);
+
 // Route::get('/dashboard', function () {
 //     return view('welcome');
 // })->name('dashboard');
@@ -88,5 +89,15 @@ Route::resource('flight_prices',FlightPriceController::class);
 
 
 
+// frontend user
+Route::get('frontenduser/register', [AuthController::class, 'signUpForm'])->name('frontenduser.auth.register');
+Route::post('frontenduser/register', [AuthController::class, 'signUpStore'])->name('frontenduser.auth.register.store');
+Route::get('frontenduser/login', [AuthController::class,'signInForm'])->name('frontenduser.auth.login');
+Route::post('frontenduser/login', [AuthController::class,'signInCheck'])->name('frontenduser.auth.login.check');
+Route::get('frontenduser/logout', [AuthController::class,'signOut'])->name('frontenduser.auth.logout');
 
+Route::middleware(['checkuser'])->prefix('user')->group(function(){
+    Route::get('dashboard', [DashboardController::class,'index'])->name('user.dashboard');
+    Route::resource('user-booking',userbooking::class);
+});
 

@@ -32,6 +32,9 @@ class FlightCategoryController extends Controller
     {
             $flight_categoryInstance = new FlightCategory;
             $flight_categoryInstance->name=$request->name;
+            $flight_categoryInstance->description=$request->description;
+            $flight_categoryInstance->baggage_allowance=$request->baggage_allowance;
+            $flight_categoryInstance->refundable=$request->refundable;
             $flight_categoryInstance->save();
            return redirect('flight_category');
 
@@ -60,6 +63,9 @@ class FlightCategoryController extends Controller
     public function update(Request $request, FlightCategory $flightCategory)
     {
             $flightCategory->name=$request->name;
+            $flightCategory->description=$request->description;
+            $flightCategory->baggage_allowance=$request->baggage_allowance;
+            $flightCategory->refundable=$request->refundable;
             $flightCategory->save();
            return redirect('flight_category');
     }

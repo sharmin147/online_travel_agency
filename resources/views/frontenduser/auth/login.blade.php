@@ -1,7 +1,7 @@
-@extends('frontenduser.layout.appAuth') 
+@extends('frontend.layout') 
 @section('title','Signin')
 @section('content')
-<div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+<div class="container-fluid bg-registration py-5">
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-7 mb-5 mb-lg-0">
@@ -24,13 +24,26 @@
                         <h1 class="text-white m-0">Sign in Now</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-white p-5">
-                       <form action="{{ route('frontenduser.auth.login.check') }}" method="POST">
+                    @if(session()->has('error'))
+                        <div class="alert alert-success">
+                            {{ session()->get('error') }}
+                        </div>
+                    @endif   
+                    <form action="{{ route('frontenduser.auth.login.check') }}" method="POST">
                             @csrf
                           <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Your email" required="required" id="email" name="email"  value="{{old('email')}}"/>
-                                  @if($errors->has('email'))
+                                <input type="text" class="form-control p-4" placeholder="Your email/Contact Number" required="required" id="username" name="username"  value="{{old('username')}}"/>
+                                  @if($errors->has('username'))
                                     <small class="d-block text-danger">
-                                 {{$errors->first('email')}}
+                                 {{$errors->first('username')}}
+                                 </small>
+                               @endif
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control p-4" placeholder="Your password" required="required" id="password" name="password"  value="{{old('password')}}"/>
+                                  @if($errors->has('password'))
+                                    <small class="d-block text-danger">
+                                 {{$errors->first('password')}}
                                  </small>
                                @endif
                             </div>

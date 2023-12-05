@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('flight_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            $table->text('description')->nullable();
+            $table->string('baggage_allowance', 100)->nullable();
+            $table->boolean('refundable')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

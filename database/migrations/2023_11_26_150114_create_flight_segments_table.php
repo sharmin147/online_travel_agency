@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('connection_airport')->nullable();
             $table->bigInteger('connection_duration')->nullable();
             $table->string('airline', 255)->nullable();
-            $table->decimal('price', 10, 2)->nullable();
             $table->timestamps();
         });
     }

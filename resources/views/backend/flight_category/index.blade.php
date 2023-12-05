@@ -17,9 +17,12 @@
         <table class="table table-bordered">
             <thead>
                 <tr class="text-center">
-                    <th style="color: green;font-size: 20px;">ID</th>
-                    <th style="color: green;font-size: 20px;">Category Name</th>
-                    <th style="color: green;font-size: 20px;">Actions</th>
+                    <th style="color: green;">ID</th>
+                    <th style="color: green;"> Name</th>
+                    <th style="color: green;">Description</th>
+                    <th style="color: green;">Baggage Allowance</th>
+                    <th style="color: green;">Refundable</th>
+                    <th style="color: green;">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +30,9 @@
                     <tr class="text-center">
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
+                        <td>{{ $category->description }}</td>
+                        <td>{{ $category->baggage_allowance }}</td>
+                        <td>{{ $category->refundable ? 'Yes' : 'No'}}</td>
                         <td>
                             <a href="{{ route('flight_category.edit', $category->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-edit"></i> Edit

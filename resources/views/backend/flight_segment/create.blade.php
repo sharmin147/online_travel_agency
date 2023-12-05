@@ -26,65 +26,17 @@
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="form-group">
-                            <label for="flight_route_id" style="color: green;">Flight Route id</label>
-                            <input type="string" id="flight_route_id" class="form-control" value="{{ old('flight_route_id')}}" name="flight_route_id">
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <div class="form-group">
                             <label for="flight_number" style="color: green;">Flight Num</label>
                             <input type="string" id="flight_number" class="form-control" value="{{ old('flight_number')}}" name="flight_number">
                         </div>
                     </div>
-                    {{-- <div class="col-md-6 col-12">
-                        <div class="form-group">
-                            <label for="departure_city" style="color: green;">Departure City</label>
-                            <select id="departure_city" onchange="checkairport(this)" class="form-control" name="departure_city">
-                                <option value="">Select City</option>
-                                @forelse($city as $c)
-                                    <option class="dc dc{{$c->id}}" value="{{$c->id}}" @if(old('departure_city')==$c->id) selected @endif>{{$c->name}}</option>
-                                @empty
-                                @endforelse
-                            </select>
-                            @if($errors->has('departure_city"'))
-                                <span class="text-danger"> {{ $errors->first('departure_city"') }}</span>
-                            @endif
-                        </div>
-                    </div>
                      <div class="col-md-6 col-12">
                         <div class="form-group">
-                            <label for="arrival_city" style="color: green;">Arrival City</label>
-                            <select id="arrival_city" class="form-control" onchange="checkairport(this)" name="arrival_city">
-                                <option value="">Select City</option>
-                                @forelse($city as $c)
-                                    <option class="ac ac{{$c->id}}" value="{{$c->id}}" @if(old('arrival_city')==$c->id) selected @endif>{{$c->name}}</option>
-                                @empty
-                                @endforelse
-                            </select>
-                        </div>
-                    </div> --}}
-                    <div class="col-md-6 col-12">
-                        <div class="form-group">
-                            <label for="departure_airport" style="color: green;">Departure Airport</label>
-                            <select id="departure_airport" class="form-control" name="departure_airport">
-                                <option value="">Select Airport</option>
-                                @forelse($airport as $c)
-                                    <option class="dcity dcity{{$c->city_id}}" value="{{$c->id}}" @if(old('departure_airport')==$c->id) selected @endif>{{$c->name}}</option>
-                                @empty
-                                @endforelse
-                            </select>
-                            @if($errors->has('departure_city"'))
-                                <span class="text-danger"> {{ $errors->first('departure_city"') }}</span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <div class="form-group">
-                            <label for="arrival_airport" style="color: green;">Arrival Airport</label>
-                            <select id="arrival_airport" class="form-control" name="arrival_airport">
-                                <option value="">Select Airport</option>
-                                @forelse($airport as $c)
-                                    <option class="acity acity{{$c->city_id}}" value="{{$c->id}}" @if(old('arrival_airport')==$c->id) selected @endif>{{$c->name}}</option>
+                            <label for="flight_route_id" style="color: green;">Flight Route</label>
+                            <select id="flight_route_id" class="form-control" name="flight_route_id">
+                                <option value="">Select Route</option>
+                                @forelse($flightRoute as $c)
+                                    <option class="ac ac{{$c->id}}" value="{{$c->id}}" @if(old('flight_route_id')==$c->id) selected @endif>{{$c->name}}</option>
                                 @empty
                                 @endforelse
                             </select>
@@ -132,8 +84,8 @@
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="form-group">
-                            <label for="price" style="color: green;">Price</label>
-                            <input type="decimal" id="price" class="form-control" value="{{ old('price')}}" name="price">
+                            <label for="airline" style="color: green;">Airline</label>
+                            <input type="text" id="airline" class="form-control" value="{{ old('airline')}}" name="airline">
                         </div>
                     </div>
                 </div>

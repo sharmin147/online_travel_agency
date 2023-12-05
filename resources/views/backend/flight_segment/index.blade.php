@@ -18,44 +18,42 @@
         <div class="col-12">
             <div class="mb-3">
                 <label for="searchCustomer" class="custom-text-color" style="font-size: 24px;">Segment List</label>
-                </div>
-                 <div class="card">
+            </div>
+            <div class="card">
                 <!-- table bordered -->
                 <div class="table-responsive">
-                 <div>
-                  <button class="btn btn-primary pull-right fs-1" onclick="window.location.href='{{  route('flight_segment.create') }}'">
-                  <i class="fa fa-plus"></i> Add Segment
-                  </button>
-                  </div>
-                  <br><table class="table table-bordered mb-0">
+                    <div>
+                        <button class="btn btn-primary pull-right fs-1" onclick="window.location.href='{{  route('flight_segment.create') }}'">
+                            <i class="fa fa-plus"></i> Add Segment
+                        </button>
+                    </div>
+                    <table class="table table-bordered mb-0">
                         <thead>
                             <tr>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('#SL')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Id')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Flight Num')}}</th>
-                                {{-- <th scope="col" style="color: green;font-size: 20px;">{{__('Departure C')}}</th> --}}
-                                {{-- <th scope="col" style="color: green;font-size: 20px;">{{__('Arrival C')}}</th> --}}
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Departure D')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Arrival D')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Is direct Flight')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Connecion Airport')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Connection Duration')}}</th>
-                                <th scope="col" style="color: green;font-size: 20px;">{{__('Price')}}</th>
-
+                                <th>{{__('#SL')}}</th>
+                                <th>{{__('Airplane')}}</th>
+                                <th>{{__('Flight Route')}}</th>
+                                <th>{{__('Flight Number')}}</th>
+                                <th>{{__('Departure Date')}}</th>
+                                <th>{{__('Arrival Ddate')}}</th>
+                                <th>{{__('Is direct Flight')}}</th>
+                                <th>{{__('Connecion Airport')}}</th>
+                                <th>{{__('Connection Duration')}}</th>
+                                <th>{{__('Airline')}}</th>
+                                <th>{{__('Action')}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($flight_segment as $p)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <td>{{$p->flight_route_id}}</td>
+                                <td>{{$p->airplane?->name}}</td>
+                                <td>{{$p->flightRoute?->name}}</td>
                                 <td>{{$p->flight_number}}</td>
-                                {{-- <td>{{$p->departure_city}}</td>
-                                <td>{{$p->arrival_city}}</td> --}}
                                 <td>{{$p->departure_date}}</td>
                                 <td>{{$p->arrival_date}}</td>
                                 <td>@if($p->is_direct_flight == 1) {{__('Yes') }} @else {{__('No') }} @endif</td>
-                                <td>{{$p->connection_airport}}</td>
+                                <td>{{$p->cairport?->name}}</td>
                                 <td>{{$p->connection_duration}}</td>
                                 <td>{{$p->price}}</td>
 

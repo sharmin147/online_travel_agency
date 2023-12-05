@@ -3,33 +3,46 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <form action="{{ route('flight_prices.update', $flight_prices->id) }}" method="post">
+            <form action="{{ route('flight_prices.update', $flightPrice->id) }}" method="post">
                 @csrf
                 @method('PATCH')
-                  <div class="form-group">
-                    <label for="flight_category_id">Flight category Id</label>
-                    <input type="integer" name="flight_category_id" value="{{ $flight_prices->flight_category_id }}" class="form-control">
-                 </div>
-                 <div class="form-group">
-                    <label for="flight_class_id">Flight Class Id</label>
-                    <input type="integer" name="flight_category_id" value="{{ $flight_prices->flight_class_id }}" class="form-control">
-                 </div>
-                 <div class="form-group">
-                    <label for="flight_route_id">Flight Route Id</label>
-                    <input type="integer" name="flight_route_id" value="{{ $flight_prices->flight_route_id }}" class="form-control">
-                 </div>
+                <div class="form-group">
+                    <label for="flight_category_id">Flight Category</label>
+                    <select name="flight_category_id" id="flight_category_id" class="form-control">
+                        <option value="">Select Category</option>
+                        @forelse($category as $cat)
+                            <option value="{{$cat->id}}" @if(old('flight_category_id',$flightPrice->flight_category_id)==$cat->id) selected @endif>{{$cat->name}}</option>
+                        @empty
 
+                        @endforelse
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flight_class_id">Flight Class</label>
+                    <select name="flight_class_id" id="flight_class_id" class="form-control">
+                        <option value="">Select Class</option>
+                        @forelse($fclass as $cat)
+                            <option value="{{$cat->id}}" @if(old('flight_class_id',$flightPrice->flight_class_id)==$cat->id) selected @endif>{{$cat->name}}</option>
+                        @empty
+
+                        @endforelse
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flight_route_id">Flight Route</label>
+                    <select name="flight_route_id" id="flight_route_id" class="form-control">
+                        <option value="">Select Route</option>
+                        @forelse($froute as $cat)
+                            <option value="{{$cat->id}}" @if(old('flight_route_id',$flightPrice->flight_route_id)==$cat->id) selected @endif>{{$cat->name}}</option>
+                        @empty
+
+                        @endforelse
+                    </select>
+                </div>
+                
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="decimal" name="price" value="{{ $flight_prices->price }}" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label for="status">Status</label>
-                    <select name="status" id="status" class="form-control">
-                        <option value="1" {{ $flight_prices->rstatus == "Paid" ? "selected" : "" }}>Paid</option>
-                        <option value="0" {{ $flight_prices->rstatus == "Pending" ? "selected" : "" }}>Pending</option>
-                    </select>
+                    <input type="decimal" name="price" value="{{ $flightPrice->price }}" class="form-control">
                 </div>
                 <button class="btn btn-primary" type="submit">Save</button>
             </form>

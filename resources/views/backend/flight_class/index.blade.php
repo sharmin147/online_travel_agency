@@ -17,23 +17,16 @@
         <table class="table table-bordered">
             <thead class="text-center">
                 <tr>
-                    <th style="color: green;font-size: 20px;">ID</th>
-                     <th style="color: green;font-size: 20px;">Class Name</th>
-                    <th style="color: green;font-size: 20px;">Description</th>
-                    <th style="color: green;font-size: 20px;">Baggage Allowance</th>
-                     <th style="color: green;font-size: 20px;">Refundable</th>
-                    <th style="color: green;font-size: 20px;">Actions</th>
+                    <th style="color: green;">ID</th>
+                    <th style="color: green;">Name</th>
+                    <th style="color: green;">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse($flight_class as $class)
                     <tr class="text-center">
                         <td>{{ $class->id }}</td>
-                        <td>{{ $class->class_name }}</td>
-                        <td>{{ $class->description }}</td>
-                        <td>{{ $class->baggage_allowance }}</td>
-                        <td>{{ $class->refundable}}</td>
-                        <td>{{ $class->status ? 'Yes' : 'No' }}</td>
+                        <td>{{ $class->name }}</td>
                         <td>
                             <a href="{{ route('flight_class.edit', $class->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-edit"></i> Edit

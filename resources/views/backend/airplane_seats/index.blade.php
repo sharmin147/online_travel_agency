@@ -18,7 +18,8 @@
             <thead>
                 <tr class="text-center">
                     <th style="color: green;font-size: 20px;">Id</th>
-                    <th style="color: green;font-size: 20px;">Airplane Id</th>
+                    <th style="color: green;font-size: 20px;">Airplane </th>
+                    <th style="color: green;font-size: 20px;">Class</th>
                     <th style="color: green;font-size: 20px;">Quantity</th>
                     <th style="color: green;font-size: 20px;">Actions</th>
                 </tr>
@@ -27,7 +28,8 @@
                 @forelse($airplane_seats as $seat)
                     <tr>
                         <td>{{ $seat->id }}</td>
-                        <td>{{ $seat->airplane_id}}</td>
+                        <td>{{ $seat->airplane?->name}}</td>
+                        <td>{{ $seat->flightClass?->name}}</td>
                         <td>{{ $seat->quantity }}</td>
 
                         <td>

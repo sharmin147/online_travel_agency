@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\AirplaneSeat;
+use App\Models\FlightClass;
+use App\Models\Airplane;
 use Illuminate\Http\Request;
 
 class AirplaneSeatController extends Controller
@@ -13,7 +15,6 @@ class AirplaneSeatController extends Controller
     public function index()
     {
         $airplane_seats = AirplaneSeat::latest()->paginate(5);
-
         return view('backend.airplane_seats.index', ['airplane_seats' => $airplane_seats]);
     }
 
@@ -22,7 +23,9 @@ class AirplaneSeatController extends Controller
      */
     public function create()
     {
-         return view('backend.airplane_seats.create');
+        $class=FlightClass::get();
+        $airplane=Airplane::get();
+        return view('backend.airplane_seats.create',compact('airplane','class'));
     }
 
     /**
@@ -51,7 +54,9 @@ class AirplaneSeatController extends Controller
      */
     public function edit(AirplaneSeat $airplaneSeat)
     {
-        return view('backend.airplane_seats.edit', compact('airplaneSeat'));
+        $class=FlightClass::get();
+        $airplane=Airplane::get();
+        return view('backend.airplane_seats.edit', compact('airplane','class','airplaneSeat'));
     }
 
     /**

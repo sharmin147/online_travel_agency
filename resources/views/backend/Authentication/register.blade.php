@@ -6,7 +6,7 @@
         <div class="row w-100 m-0">
           <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
             <div class="card col-lg-4 mx-auto">
-              <div class="card-body px-5 py-5">
+              <div class="card-body px-2 py-5">
                 <h3 class="card-title text-left mb-3">Register</h3>
                 	<form action="{{route('register.store')}}" method="POST">
                     @csrf

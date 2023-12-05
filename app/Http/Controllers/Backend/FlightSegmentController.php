@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\FlightSegment;
 use App\Models\Airplane;
-use App\Models\City;
+use App\Models\flightRoute;
 use App\Models\Ariport;
 use Illuminate\Http\Request;
 
@@ -26,9 +26,9 @@ class FlightSegmentController extends Controller
     public function create()
     {
         $airplane = Airplane::get();
-        $city = City::get();
+        $flightRoute = flightRoute::get();
         $airport = Ariport::get();
-        return view('backend.flight_segment.create',compact('airplane','city','airport'));
+        return view('backend.flight_segment.create',compact('airplane','flightRoute','airport'));
     }
 
     /**
@@ -40,14 +40,12 @@ class FlightSegmentController extends Controller
             $flight_segmentInstance->airplane_id=$request->airplane_id;
             $flight_segmentInstance->flight_route_id=$request->flight_route_id;
             $flight_segmentInstance->flight_number=$request->flight_number;
-            // $flight_segmentInstance->departure_city=$request->departure_city;
-            // $flight_segmentInstance->arrival_city=$request->arrival_city;
             $flight_segmentInstance->departure_date=$request->departure_date;
             $flight_segmentInstance->arrival_date=$request->arrival_date;
             $flight_segmentInstance->is_direct_flight=$request->is_direct_flight;
             $flight_segmentInstance->connection_airport=$request->connection_airport;
             $flight_segmentInstance->connection_duration=$request->connection_duration;
-            $flight_segmentInstance->price=$request->price;
+            $flight_segmentInstance->airline=$request->airline;
             $flight_segmentInstance->save();
            return redirect('flight_segment');
     }

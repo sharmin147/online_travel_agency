@@ -49,12 +49,22 @@
                         <a class="text-primary px-3" href="">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-instagram"></i>
+                        @if(request()->session()->get('userId'))
+                        <a class="text-primary pl-3" href="{{route('frontenduser.auth.logout')}}">
+                            <i class="fa fa-lock"></i> Logout
                         </a>
-                        <a class="text-primary pl-3" href="">
-                            <i class="fab fa-youtube"></i>
+                        <a class="text-primary pl-3" href="{{route('user.dashboard')}}">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
                         </a>
+                        @else
+                            <a class="text-primary pl-3" href="{{route('frontenduser.auth.login')}}">
+                                <i class="fa fa-lock-open"></i> Login
+                            </a>
+                            <a class="text-primary pl-3" href="{{route('frontenduser.auth.register')}}">
+                                <i class="fa fa-users"></i> Register
+                            </a>
+
+                        @endif
                     </div>
                 </div>
             </div>

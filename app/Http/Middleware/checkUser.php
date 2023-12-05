@@ -3,11 +3,11 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\User; // custome
+use App\Models\Authentication; // custome
 use Illuminate\Http\Request;
 use Session; // custome
 
-class checkAuth
+class checkUser
 {
     /**
      * Handle an incoming request.
@@ -23,7 +23,7 @@ class checkAuth
         if(!Session::has('userId') || Session::has('userId')==null){
             return redirect()->route('logOut');
         }else{
-            $user=User::where('status',1)->where('id',currentUserId())->first();
+            $user=Authentication::where('id',currentUserId())->first();
             if(!$user)
                 return redirect()->route('logOut');
             else

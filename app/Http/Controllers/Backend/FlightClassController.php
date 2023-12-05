@@ -32,9 +32,7 @@ class FlightClassController extends Controller
     {
 
             $flight_classInstance = new FlightClass;
-            $flight_classInstance->class_name=$request->class_name;
-            $flight_classInstance->description=$request->description;
-            $flight_classInstance->baggage_allowance=$request->baggage_allowance;
+            $flight_classInstance->name=$request->name;
             $flight_classInstance->save();
            return redirect('flight_class');
     }
@@ -61,9 +59,7 @@ class FlightClassController extends Controller
      */
     public function update(Request $request, FlightClass $flightClass)
     {
-            $flightClass->class_name=$request->class_name;
-            $flightClass->description=$request->description;
-            $flightClass->baggage_allowance=$request->baggage_allowance;
+            $flightClass->name=$request->name;
             $flightClass->save();
            return redirect('flight_class');
     }

@@ -6,10 +6,26 @@
             <form action="{{ route('flight_category.update', $flight_category->id) }}" method="post">
                 @csrf
                 @method('PATCH')
-                <div class="form-group">
-                    <label for="category_name">Category Name</label>
-                    <input type="text" name="name" id="name" class="form-control" value="{{ $flight_category->name }}">
+                  <div class="form-group">
+                    <label for="name">Class Name</label>
+                    <input type="text" name="name" value="{{ $flight_category->name }}" class="form-control">
                 </div>
+                 <div class="form-group">
+                    <label for="descripton">Description</label>
+                    <input type="text" name="description" value="{{ $flight_category->description }}" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="baggage_allowance">Baggage Allowence</label>
+                    <input type="number" name="baggage_allowance" value="{{ $flight_category->baggage_allowance }}" id="baggage_allowance" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="refundable">Refundable</label>
+                    <select name="refundable" id="refundable" class="form-control">
+                        <option value="1" {{ $flight_category->refundable == "1" ? "selected" : "" }}>Yes</option>
+                        <option value="0" {{ $flight_category->refundable== "0" ? "selected" : "" }}>No</option>
+                    </select>
+                </div>
+                
                 <button class="btn btn-primary" type="submit">Save</button>
             </form>
         </div>

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('flight_prices', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('flight_category_id')->nullable();
-            $table->bigInteger('flight_class_id')->nullable();
+            $table->bigInteger('flight_class_id');
             $table->bigInteger('flight_route_id')->nullable();
             $table->decimal('price', 10, 2)->nullable();
             $table->bigInteger('status')->nullable();

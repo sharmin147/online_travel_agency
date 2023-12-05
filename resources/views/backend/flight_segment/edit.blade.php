@@ -74,8 +74,8 @@
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="price">Price</label>
-                                            <input type="decimal" id="price" class="form-control" value="{{ old('price',$flight_segment->price)}}" name="price">
+                                            <label for="price">Airline</label>
+                                            <input type="text" id="airline" class="form-control" value="{{ old('airline',$flight_segment->airline)}}" name="airline">
                                          </div>
                                     </div>
                                 </div>

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Ariport;
@@ -31,10 +30,10 @@ class AriportController extends Controller
     public function store(Request $request)
     {
         $ariport = new Ariport;
-        $ariport->city_id=$request->city_id;
+        // $ariport->city_id=$request->city_id;
         $ariport->name=$request->name;
         $ariport->save();
-        return redirect('ariports');
+        return redirect()->route('ariports.index');
     }
 
     /**
@@ -58,10 +57,10 @@ class AriportController extends Controller
      */
     public function update(Request $request, Ariport $ariport)
     {
-        $ariport->city_id=$request->city_id;
+        // $ariport->city_id=$request->city_id;
         $ariport->name=$request->name;
         $ariport->save();
-        return redirect('ariports');
+        return redirect()->route('ariports.index');
     }
 
     /**
@@ -70,6 +69,6 @@ class AriportController extends Controller
     public function destroy(Ariport $ariport)
     {
         $ariport->delete();
-        return redirect('ariports')->with('message','Data deleted successfully');
+        return redirect()->route('ariports.index')->with('message','Data deleted successfully');
     }
 }

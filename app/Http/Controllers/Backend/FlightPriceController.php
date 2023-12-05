@@ -41,7 +41,7 @@ class FlightPriceController extends Controller
         $flight_prices->flight_route_id=$request->flight_route_id;
         $flight_prices->price=$request->price;
         $flight_prices->save();
-       return redirect('flight_prices');
+       return redirect()->route('flight_prices.index');
     }
 
     /**
@@ -73,7 +73,7 @@ class FlightPriceController extends Controller
         $flightPrice->flight_route_id=$request->flight_route_id;
         $flightPrice->price=$request->price;
         $flightPrice->save();
-       return redirect('flight_prices');
+       return redirect()->route('flight_prices.index');
     }
 
     /**
@@ -82,6 +82,6 @@ class FlightPriceController extends Controller
     public function destroy(FlightPrice $flightPrice)
     {
         $flightPrice->delete();
-        return redirect('flight_prices')->with('message','Data deleted successfully');
+        return redirect()->route('flight_prices.index')->with('message','Data deleted successfully');
     }
 }

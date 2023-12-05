@@ -5,13 +5,18 @@
     <div class="col-sm-12">
         <form action="{{ route('ariports.store') }}" method="post">
             @csrf
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="city_id">City Id</label>
                 <input type="city_id" id="city_id" class="form-control">
-            </div>
+            </div> --}}
+
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" class="form-control">
+                <select name="ariport" id="ariport" class="form-control">
+                    <option value="ZAZ">Zazira Airport</option>
+                    <option value="ABC">Airport ABC</option>
+                    <option value="XYZ">XYZ International Airport</option>
+                </select>
             </div>
            <button class="btn btn-primary" type="submit">Save</button>
         </form>

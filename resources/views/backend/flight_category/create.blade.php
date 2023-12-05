@@ -7,8 +7,13 @@
             @csrf
             <div class="form-group">
                 <label for="name">Category Name</label>
-                <input type="text" name="name" id="name" class="form-control">
+                <select name="name" id="name" class="form-control">
+                    <option value="One Way">One Way</option>
+                    <option value="Multicity">Multicity</option>
+                    <option value="Round trip">Round Trip</option>
+                </select>
             </div>
+
             <div class="form-group">
                 <label for="description">Description</label>
                 <textarea name="description" id="description" class="form-control"></textarea>

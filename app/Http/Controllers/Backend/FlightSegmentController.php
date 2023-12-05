@@ -47,7 +47,7 @@ class FlightSegmentController extends Controller
             $flight_segmentInstance->connection_duration=$request->connection_duration;
             $flight_segmentInstance->airline=$request->airline;
             $flight_segmentInstance->save();
-           return redirect('flight_segment');
+           return redirect()->route('flight_segment.index');
     }
 
     /**
@@ -82,9 +82,9 @@ class FlightSegmentController extends Controller
         $flightSegment->is_direct_flight=$request->is_direct_flight;
         $flightSegment->connection_airport=$request->connection_airport;
         $flightSegment->connection_duration=$request->connection_duration;
-        $flightSegment->price=$request->price;
+        $flightSegment->airline=$request->airline;
         $flightSegment->save();
-       return redirect('flight_segment');
+       return redirect()->route('flight_segment.index');
     }
 
     /**
@@ -94,6 +94,6 @@ class FlightSegmentController extends Controller
     {
 
         $flightSegment->delete();
-        return redirect('flight_segment')->with('message','Data deleted successfully');
+        return redirect()->route('flight_segment.index')->with('message','Data deleted successfully');
     }
 }

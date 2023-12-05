@@ -8,11 +8,13 @@
             <div class="form-group">
                 <label for="name">Name</label>
                 <select name="name" id="name" class="form-control">
-                    <option value="one">Bangladesh</option>
-                    <option value="two">India</option>
-                    <option value="three">Dubai</option>
-                  
-                </select>
+                    <option value="Ctg">Ctg</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Doha">Doha</option>
+                    <option value="Barishal">Barishal</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Berlin">Berlin</option>
+                 </select>
             </div>
            <button class="btn btn-primary" type="submit">Save</button>
         </form>

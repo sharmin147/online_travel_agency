@@ -34,7 +34,7 @@ class FlightClassController extends Controller
             $flight_classInstance = new FlightClass;
             $flight_classInstance->name=$request->name;
             $flight_classInstance->save();
-           return redirect('flight_class');
+           return redirect()->route('flight_class.index');
     }
 
     /**
@@ -61,7 +61,7 @@ class FlightClassController extends Controller
     {
             $flightClass->name=$request->name;
             $flightClass->save();
-           return redirect('flight_class');
+           return redirect()->route('flight_class.index');
     }
 
     /**
@@ -71,6 +71,6 @@ class FlightClassController extends Controller
     {
 
        $flightClass->delete();
-        return redirect('flight_class')->with('message','Data deleted successfully');
+        return redirect()->route('flight_class.index')->with('message','Data deleted successfully');
     }
 }

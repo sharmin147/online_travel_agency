@@ -18,7 +18,7 @@
             <thead class="text-center">
                 <tr>
                     <th style="color: green; font-size: 15px;">Id</th>
-                    <th style="color: green; font-size: 15px;">City Id</th>
+                    {{-- <th style="color: green; font-size: 15px;">City Id</th> --}}
                     <th style="color: green; font-size: 15px;">Name</th>
                     <th style="color: green; font-size: 15px;">Actions</th>
                 </tr>
@@ -27,7 +27,7 @@
                 @forelse($ariports as $b)
                     <tr class="text-center">
                         <td>{{ $b->id }}</td>
-                        <td>{{ $b->city_id}}</td>
+                        {{-- <td>{{ $b->city_id}}</td> --}}
                         <td>{{ $b->name}}</td>
 
                          <td>

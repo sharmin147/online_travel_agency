@@ -6,10 +6,10 @@
             <form action="{{ route('ariports.update', $ariport->id) }}" method="post">
                 @csrf
                 @method('PATCH')
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="city_id">City Id</label>
                     <input type="bigInteger" value="{{$ariport->city_id}}" class="form-control">
-                </div>
+                </div> --}}
                  <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" value="{{ $ariport->name }}" class="form-control">

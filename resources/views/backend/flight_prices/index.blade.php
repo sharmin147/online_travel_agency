@@ -34,6 +34,7 @@
                         <td>{{ $prices->fclass?->name }}</td>
                         <td>{{ $prices->froute?->name }}</td>
                         <td>{{ $prices->price }}</td>
+                        <td>{{ $prices->status }}</td>
                         <td>
                             <a href="{{ route('flight_prices.edit', $prices->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-edit"></i> Edit

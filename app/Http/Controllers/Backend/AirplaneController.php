@@ -38,7 +38,7 @@ class AirplaneController extends Controller
         $airplanesInstance->name=$request->name;
         $airplanesInstance->description=$request->description;
         $airplanesInstance->save();
-        return redirect('airplanes');
+        return redirect()->route('airplanes.index');
     }
 
     /**
@@ -66,7 +66,7 @@ class AirplaneController extends Controller
         $airplane->name=$request->name;
         $airplane->description=$request->description;
         $airplane->save();
-        return redirect('airplanes');
+        return redirect()->route('airplanes.index');
 
     }
     /**
@@ -75,7 +75,7 @@ class AirplaneController extends Controller
     public function destroy(Airplane $airplane)
     {
         $airplane->delete();
-        return redirect('airplanes')->with('message','Data deleted successfully');
+        return redirect()->route('airplanes.index')->with('message','Data deleted successfully');
     }
 }
 

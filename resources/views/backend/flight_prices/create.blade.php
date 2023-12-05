@@ -42,6 +42,13 @@
                 <label for="price">Price</label>
                 <input type="decimal" name="price" id="price" class="form-control">
             </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select name="status" id="status" class="form-control">
+                    <option value="1">Paid</option>
+                    <option value="0">Pending</option>
+                </select>
+            </div>
 
             <button class="btn btn-primary" type="submit">Save</button>
         </form>

@@ -39,11 +39,19 @@
                         @endforelse
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="price">Price</label>
                     <input type="decimal" name="price" value="{{ $flightPrice->price }}" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control">
+                        <option value="1" {{ $flightPrice->status == "1" ? "selected" : "" }}>Yes</option>
+                        <option value="0" {{ $flightPrice->status== "0" ? "selected" : "" }}>No</option>
+                    </select>
+                </div>
+
                 <button class="btn btn-primary" type="submit">Save</button>
             </form>
         </div>

@@ -82,12 +82,24 @@
                             <input type="text" id="connection_duration" class="form-control" value="{{ old('connection_duration')}}" name="connection_duration">
                         </div>
                     </div>
-                    <div class="col-md-6 col-12">
+                    {{-- <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="airline" style="color: green;">Airline</label>
                             <input type="text" id="airline" class="form-control" value="{{ old('airline')}}" name="airline">
                         </div>
+                    </div> --}}
+                    <div class="col-md-6 col-12">
+                        <div class="form-group">
+                            <label for="airline" style="color: green;">Airline</label>
+                            <select id="airline" class="form-control" name="airline">
+                                <option value="">Select Airline</option>
+                                <option value="American Airlines">American Airlines</option>
+                                <option value="Delta Air Lines">Delta Air Lines</option>
+                                <option value="United Airlines">United Airlines</option>
+                           </select>
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="row">

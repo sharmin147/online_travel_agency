@@ -38,7 +38,7 @@ class AirplaneSeatController extends Controller
         $airplaneSeat->flight_class_id=$request->flight_class_id;
         $airplaneSeat->quantity=$request->quantity;
         $airplaneSeat->save();
-       return redirect('airplane_seats');
+       return redirect()->route('airplane_seats.index');
     }
 
     /**
@@ -68,7 +68,7 @@ class AirplaneSeatController extends Controller
         $airplaneSeat->flight_class_id=$request->flight_class_id;
         $airplaneSeat->quantity=$request->quantity;
         $airplaneSeat->save();
-       return redirect('airplane_seats');
+       return redirect()->route('airplane_seats.index');
     }
 
     /**
@@ -77,6 +77,6 @@ class AirplaneSeatController extends Controller
     public function destroy(AirplaneSeat $airplaneSeat)
     {
         $airplaneSeat->delete();
-        return redirect('airplane_seats')->with('message','Data deleted successfully');
+        return redirect()->route('airplane_seats.index')->with('message','Data deleted successfully');
     }
 }

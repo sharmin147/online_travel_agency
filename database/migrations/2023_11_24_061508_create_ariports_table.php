@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ariports', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('city_id');
+            // $table->bigInteger('city_id');
             $table->string('name');
             $table->timestamps();
         });

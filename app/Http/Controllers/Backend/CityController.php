@@ -32,7 +32,7 @@ class CityController extends Controller
         $cityInstance = new City;
         $cityInstance->name=$request->name;
         $cityInstance->save();
-       return redirect('city');
+       return redirect()->route('city.index');
     }
 
     /**
@@ -56,7 +56,7 @@ class CityController extends Controller
     {
         $city->name=$request->name;
         $city->save();
-       return redirect('city');
+       return redirect()->route('city.index');
     }
 
     /**
@@ -65,7 +65,7 @@ class CityController extends Controller
     public function destroy(City $city)
     {
         $city->delete();
-        return redirect('city')->with('message','Data deleted successfully');
+        return redirect()->route('city.index')->with('message','Data deleted successfully');
     }
 }
 

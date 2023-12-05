@@ -41,7 +41,7 @@ class FlightRouteController extends Controller
             $data->departure_airport=$request->departure_airport;
             $data->arrival_airport=$request->arrival_airport;
             $data->save();
-           return redirect('flight_route');
+           return redirect()->route('flight_route.index');
     }
 
     /**
@@ -73,7 +73,7 @@ class FlightRouteController extends Controller
         $flightRoute->departure_airport=$request->departure_airport;
         $flightRoute->arrival_airport=$request->arrival_airport;
         $flightRoute->save();
-       return redirect('flight_route');
+       return redirect()->route('flight_route.index');
     }
 
     /**
@@ -83,7 +83,7 @@ class FlightRouteController extends Controller
     {
 
         $flightRoute->delete();
-        return redirect('flight_route')->with('message','Data deleted successfully');
+        return redirect()->route('flight_route.index')->with('message','Data deleted successfully');
     }
 }
 

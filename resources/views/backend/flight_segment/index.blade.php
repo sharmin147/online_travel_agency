@@ -55,7 +55,7 @@
                                 <td>@if($p->is_direct_flight == 1) {{__('Yes') }} @else {{__('No') }} @endif</td>
                                 <td>{{$p->cairport?->name}}</td>
                                 <td>{{$p->connection_duration}}</td>
-                                <td>{{$p->price}}</td>
+                                <td>{{$p->airline}}</td>
 
                                 <td class="white-space-nowrap">
                                    <button class="btn btn-sm btn-primary" onclick="window.location.href='{{ route('flight_segment.edit', encryptor('encrypt', $p->id)) }}'">

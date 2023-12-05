@@ -6,10 +6,15 @@
             <form action="{{ route('flight_category.update', $flight_category->id) }}" method="post">
                 @csrf
                 @method('PATCH')
-                  <div class="form-group">
-                    <label for="name">Class Name</label>
-                    <input type="text" name="name" value="{{ $flight_category->name }}" class="form-control">
+                <div class="form-group">
+                    <label for="category">Category Name</label>
+                    <select name="name" id="name" class="form-control">
+                        <option value="One Way" @if($flight_category->name == 'One Way') selected @endif>One Way</option>
+                        <option value="Multicity" @if($flight_category->name == 'Multicity') selected @endif>Multicity</option>
+                        <option value="Round Trip" @if($flight_category->name == 'Round Trip') selected @endif>Round Trip</option>
+                   </select>
                 </div>
+
                  <div class="form-group">
                     <label for="descripton">Description</label>
                     <input type="text" name="description" value="{{ $flight_category->description }}" class="form-control">
@@ -25,7 +30,7 @@
                         <option value="0" {{ $flight_category->refundable== "0" ? "selected" : "" }}>No</option>
                     </select>
                 </div>
-                
+
                 <button class="btn btn-primary" type="submit">Save</button>
             </form>
         </div>

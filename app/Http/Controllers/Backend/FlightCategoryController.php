@@ -12,7 +12,7 @@ class FlightCategoryController extends Controller
      */
     public function index()
     {
-        $flight_category = FlightCategory::latest()->paginate(4); 
+        $flight_category = FlightCategory::latest()->paginate(4);
 
          return view('backend.flight_category.index', ['flight_category' => $flight_category]);
     }
@@ -36,7 +36,7 @@ class FlightCategoryController extends Controller
             $flight_categoryInstance->baggage_allowance=$request->baggage_allowance;
             $flight_categoryInstance->refundable=$request->refundable;
             $flight_categoryInstance->save();
-           return redirect('flight_category');
+           return redirect()->route('flight_category.index');
 
     }
 
@@ -67,7 +67,7 @@ class FlightCategoryController extends Controller
             $flightCategory->baggage_allowance=$request->baggage_allowance;
             $flightCategory->refundable=$request->refundable;
             $flightCategory->save();
-           return redirect('flight_category');
+           return redirect()->route('flight_category.index');
     }
 
     /**
@@ -76,7 +76,7 @@ class FlightCategoryController extends Controller
     public function destroy(FlightCategory $flightCategory)
     {
        $flightCategory->delete();
-        return redirect('flight_category')->with('message','Data deleted successfully');
+        return redirect()->route('flight_category.index')->with('message','Data deleted successfully');
     }
 
 }

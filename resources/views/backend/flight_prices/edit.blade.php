@@ -15,7 +15,7 @@
                     <input type="integer" name="flight_category_id" value="{{ $flight_prices->flight_class_id }}" class="form-control">
                  </div>
                  <div class="form-group">
-                    <label for="flight_route_id">Flight category Id</label>
+                    <label for="flight_route_id">Flight Route Id</label>
                     <input type="integer" name="flight_route_id" value="{{ $flight_prices->flight_route_id }}" class="form-control">
                  </div>
 

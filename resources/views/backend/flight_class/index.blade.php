@@ -18,11 +18,10 @@
             <thead class="text-center">
                 <tr>
                     <th style="color: green;font-size: 20px;">ID</th>
-                    <th style="color: green;font-size: 20px;">Flight Id</th>
-                    <th style="color: green;font-size: 20px;">Seat Id</th>
-                    <th style="color: green;font-size: 20px;">Class Name</th>
-                    <th style="color: green;font-size: 20px;">Price</th>
-                    <th style="color: green;font-size: 20px;">Status</th>
+                     <th style="color: green;font-size: 20px;">Class Name</th>
+                    <th style="color: green;font-size: 20px;">Description</th>
+                    <th style="color: green;font-size: 20px;">Baggage Allowance</th>
+                     <th style="color: green;font-size: 20px;">Refundable</th>
                     <th style="color: green;font-size: 20px;">Actions</th>
                 </tr>
             </thead>
@@ -30,11 +29,11 @@
                 @forelse($flight_class as $class)
                     <tr class="text-center">
                         <td>{{ $class->id }}</td>
-                        <td>{{ $class->flight_id}}</td>
-                        <td>{{ $class->seat_id }}</td>
                         <td>{{ $class->class_name }}</td>
-                        <td>{{ $class->price }}</td>
-                        <td>{{ $class->status ? 'Accept' : 'Pending' }}</td>
+                        <td>{{ $class->description }}</td>
+                        <td>{{ $class->baggage_allowance }}</td>
+                        <td>{{ $class->refundable}}</td>
+                        <td>{{ $class->status ? 'Yes' : 'No' }}</td>
                         <td>
                             <a href="{{ route('flight_class.edit', $class->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-edit"></i> Edit

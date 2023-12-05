@@ -27,7 +27,7 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse($flight_price as $prices)
+                @forelse($flight_prices as $prices)
                     <tr class="text-center">
                         <td>{{ $prices->id }}</td>
                         <td>{{ $prices->flight_category_id}}</td>

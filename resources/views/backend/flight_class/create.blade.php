@@ -5,14 +5,7 @@
     <div class="col-sm-12">
         <form action="{{ route('flight_class.store') }}" method="post">
             @csrf
-            <div class="form-group">
-                <label for="flight_id">Flight Id</label>
-                <input type="text" name="flight_id" id="flight_id" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="seat_id">Seat Id</label>
-                <input type="text" name="seat_id" id="seat_id" class="form-control">
-            </div>
+           
             <div class="form-group">
                 <label for="class_name">Class Name</label>
                 <select name="class_name" id="class_name" class="form-control">
@@ -23,17 +16,20 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" name="price" id="price" class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" class="form-control"></textarea>
             </div>
            <div class="form-group">
-                <label for="status">Status</label>
-                <select name="status" id="status" class="form-control">
-                    <option value="1">Accept</option>
-                    <option value="0">Pending</option>
+                <label for="baggage_allowance">Baggage Allowence</label>
+                <input type="number" name="baggage_allowance" id="baggage_allowance" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="refundable">Refundable</label>
+                <select name="refundable" id="refundable" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
                 </select>
             </div>
-            
             <button class="btn btn-primary" type="submit">Save</button>
         </form>
     </div>

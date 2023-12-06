@@ -10,6 +10,7 @@ use App\Models\flightRoute;
 use App\Models\FlightSegment;
 use App\Models\AirplaneSeat;
 use App\Models\FlightPrice;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -19,7 +20,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::latest()->paginate(4);
+        $bookings = Booking::where('customer_id',currentUserId())->latest()->paginate(4);
         return view('frontenduser.booking.index', ['bookings' => $bookings]);
     }
 
@@ -77,14 +78,30 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $bookingsInstance = new Booking;
-        $bookingsInstance->customer_id=$request->customer_id;
-        $bookingsInstance->flight_id=$request->flight_id;
-        $bookingsInstance->seat_id=$request->seat_id;
-        $bookingsInstance->payment_status=$request->payment_status;
-        $bookingsInstance->status=$request->status;
-        $bookingsInstance->save();
-       return redirect('bookings');
+        
+        $data = new Booking;
+        $data->customer_id=currentUserId();
+        $data->flight_id=$request->flight_id;
+        $data->flight_class_id=$request->flight_class_id;
+        $data->flight_category_id=$request->flight_category_id;
+        $data->booking_date=date('Y-m-d');
+        $data->qty=$request->seat_qty;
+        $data->amount=($request->seat_price * $request->seat_qty);
+        $data->vat=$data->amount * 0.15;
+        $data->total_amount=$data->amount + $data->vat;
+        $data->status=0;
+        if($data->save()){
+            $pay=new Payment;
+            $pay->customer_id=$data->customer_id;
+            $pay->amount=$request->amount;
+            $pay->payment_method="Online Payment";
+            $pay->transaction_id=$request->transaction_id;
+            $pay->payment_status=1;
+            $pay->payment_date=date('Y-m-d');
+            $pay->notes="";
+            $pay->save();
+        }
+        return redirect()->route('user-booking.index');
     }
 
     /**

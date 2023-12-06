@@ -10,48 +10,34 @@
                         <h1 class="text-white m-0">Booking</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-white p-5">
-                       <form action="{{ route('frontenduser.auth.register.store') }}" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Your name" required="required" id="name" name="name"  value="{{old('name')}}"/>
-                                  @if($errors->has('name'))
-                                    <small class="d-block text-danger">
-                                 {{$errors->first('name')}}
-                                 </small>
-                               @endif
-                            </div>
+                      <table class="table">
+                        <tr>
+                          <th>#SL</th>
+                          <th>Flight</th>
+                          <th>Seat Class</th>
+                          <th>Booking Date</th>
+                          <th>Travel Date</th>
+                          <th>Seat Qty</th>
+                          <th>Total Amount</th>
+                          <th>Action</th>
+                        </tr>
+                        @forelse($bookings as $b)
+                          <tr>
+                            <th>{{$b->id}}</th>
+                            <th>{{$b->flight?->flight_number}}</th>
+                            <th>{{$b->sclass?->name}}</th>
+                            <th>{{$b->booking_date}}</th>
+                            <th>{{$b->flight?->departure_date}} to {{$b->flight?->arrival_date}}</th>
+                            <th>{{$b->qty}}</th>
+                            <th>{{$b->total_amount}}</th>
+                            <th>
+                              <a href="" class="btn btn-primary">Invoice</a>
+                            </th>
+                          </tr>
+                        @empty
 
-                            <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Your contact" required="required" id="contact" name="contact"  value="{{old('contact')}}"/>
-                                  @if($errors->has('contact'))
-                                    <small class="d-block text-danger">
-                                 {{$errors->first('contact')}}
-                                 </small>
-                               @endif
-                            </div>
-                             <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Your email" required="required" id="email" name="email"  value="{{old('email')}}"/>
-                                  @if($errors->has('email'))
-                                    <small class="d-block text-danger">
-                                 {{$errors->first('email')}}
-                                 </small>
-                               @endif
-                            </div>
-                             <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Your password" required="required" id="password" name="password"  value="{{old('password')}}"/>
-                                  @if($errors->has('password'))
-                                    <small class="d-block text-danger">
-                                 {{$errors->first('password')}}
-                                 </small>
-                               @endif
-                            </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="confirm password" required="" id="password_confirmation" name="password_confirmation"/>
-                              </div>
-                               <div>
-                                <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
-                            </div>
-                        </form>
+                        @endforelse
+                      </table>
                     </div>
                 </div>
             </div>

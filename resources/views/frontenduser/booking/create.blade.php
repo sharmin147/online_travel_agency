@@ -75,7 +75,7 @@
                               </div>
                             </div>
                             <div class="row flight_data" style="display:none">
-                              <div class="col-sm-4 col-12">
+                              <div class="col-sm-3 col-12">
                                 <div class="form-group">
                                   <label for="to">Flight</label>
                                     <select class="form-control p-2" id="flight_id" name="flight_id" required="required">
@@ -83,7 +83,7 @@
                                     </select>
                                   </div>
                               </div>
-                              <div class="col-sm-4 col-12">
+                              <div class="col-sm-3 col-12">
                                 <div class="form-group">
                                   <label for="flight_class_id">Seat Class</label>
                                   <select class="form-control p-2" id="flight_class_id" name="flight_class_id" required="required">
@@ -95,7 +95,7 @@
                                   </select>
                                 </div>
                               </div>
-                              <div class="col-sm-4 col-12">
+                              <div class="col-sm-3 col-12">
                                 <div class="form-group">
                                   <label for="flight_category_id">Flight Category</label>
                                   <select class="form-control p-2" id="flight_category_id" name="flight_category_id" required="required">
@@ -109,7 +109,7 @@
                                   </select>
                                 </div>
                               </div>
-                              <div class="col-sm-4 col-12">
+                              <div class="col-sm-3 col-12">
                                 <div class="form-group pt-1">
                                   <a href="javascript:void(0)" class="btn btn-primary mt-4" onclick="checkSeat()">Check Seat</a>
                                 </div>
@@ -122,22 +122,46 @@
                               </div>
                             </div>
                             <div class="row seat_data" style="display:none">
-                              <div class="col-sm-4">
-                                <div class="form-group">
-                                  <label for="flight_category_id">Available Seat: <span class="available_sate"></span></label>
+                              <div class="col-sm-6">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="form-group">
+                                      <label for="qty">Seat Quantity</label>
+                                      <input type="text" class="form-control" name="seat_qty" id="seat_qty" onkeyup="checkqty(this)">
+                                    </div>
+                                  </div>
+                                  <div class="col-12">
+                                    <div class="form-group">
+                                      <label for="qty">Pay Amount</label>
+                                      <input type="text" class="form-control" name="amount" id="amount">
+                                      <input type="hidden" name="seat_price" id="seat_price">
+                                    </div>
+                                  </div>
+                                  <div class="col-12">
+                                    <div class="form-group">
+                                      <label for="qty">Transaction ID</label>
+                                      <input type="text" class="form-control" name="transaction_id" id="transaction_id">
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                              <div class="col-sm-4">
-                                <div class="form-group">
-                                  <label for="flight_category_id">Price Per Seat: <span class="seat_price"></span></label>
+                              <div class="col-sm-6">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="form-group">
+                                      <label for="flight_category_id">Available Seat: <span class="available_seat"></span></label><br>
+                                      <label for="seat_price">Price Per Seat: <span class="seat_price"></span></label><br>
+                                      <label for="seat_price">Sub Amount: <span class="sub_amount"></span></label><br>
+                                      <label for="seat_price">Vat: <span class="vat"></span></label><br>
+                                      <label for="flight_category_id" style="border-top:3px double green">Total Amount: <span class="total_seat_price"></span></label><br>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                              <div class="col-sm-4"></div>
                               
-
                             </div>
                             <div>
-                              <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
+                              <button class="btn btn-primary btn-block py-3" type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -149,6 +173,10 @@
 @endsection
 @push('scripts')
 <script>
+  /* global variable */
+  var available_seat=0;
+  var seat_price=0;
+
   function getFlight(){
     let from=$('#from').val();
     let to=$('#to').val();
@@ -169,8 +197,6 @@
             $('.flight_data').hide();
             $('.no-flight_data').show();
           }
-          
-
         },error: function(e){console.log(e);}
     });
   }
@@ -189,16 +215,32 @@
           if(res){
             $('.seat_data').show()
             $('.no-seat_data').hide();
-            $('.available_sate').html(res.available);
+            $('.available_seat').html(res.available);
             $('.seat_price').html(res.price);
+            $('#seat_price').val(res.price);
+
+            available_seat=res.available;
+            seat_price=res.price;
+
           }else{
             $('.seat_data').hide();
             $('.no-seat_data').show();
           }
-          
-
         },error: function(e){console.log(e);}
     });
+  }
+
+  function checkqty(e){
+    var seat_qty=$(e).val();
+    if(parseFloat(seat_qty) > parseFloat(available_seat)){
+      alert('You cannot buy more than '+available_seat);
+      $(e).val(available_seat);
+    }
+    var amount=seat_price * $(e).val();
+    var vat=(amount*0.15);
+    $('.vat').html(vat);
+    $('.sub_amount').html(amount);
+    $('.total_seat_price').html(amount + vat);
   }
 </script>
 

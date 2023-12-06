@@ -35,7 +35,7 @@ class SeatController extends Controller
          $seatsInstance->class_id=$request->class_id;
          $seatsInstance->status=$request->status;
          $seatsInstance->save();
-       return redirect('seats');
+       return redirect()->route('seats.index');
     }
 
     /**
@@ -67,7 +67,7 @@ class SeatController extends Controller
      $seats->status = $request->status;
      $seats->save();
 
-     return redirect('seats');
+     return redirect()->route('seats.index');
  }
 
     /**
@@ -76,6 +76,6 @@ class SeatController extends Controller
     public function destroy(Seat $seats)
     {
        $seats->delete();
-        return redirect('seats')->with('message','Data deleted successfully');
+        return redirect()->route('seats.index')->with('message','Data deleted successfully');
     }
 }

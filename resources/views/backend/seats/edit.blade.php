@@ -15,8 +15,8 @@
                     <input type="number" name="category_id" value="{{ $seats->category_id }}" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="seat_id">Seat Id</label>
-                    <input type="text" name="seat_id" value="{{ $seats->class_id }}" class="form-control">
+                    <label for="class_id">Seat Id</label>
+                    <input type="text" name="class_id" value="{{ $seats->class_id }}" class="form-control">
                 </div>
                <div class="form-group">
                     <label for="status">Status</label>

@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="form-group">
-                            <label for="name" style="color: green;">Name</label>
+                            <label for="name" style="color: green;">Route Name</label>
                             <input type="string" id="name" class="form-control" value="{{ old('name')}}" name="name">
                         </div>
                     </div>

@@ -18,21 +18,21 @@
             <thead class="text-center">
                 <tr>
                     <th style="color: green;font-size: 20px;">Id</th>
-                    <th style="color: green;font-size: 20px;">Customer</th>
+                    <!-- <th style="color: green;font-size: 20px;">Customer</th>
                     <th style="color: green;font-size: 20px;">Flight</th>
-                    <th style="color: green;font-size: 20px;">Seat</th>
+                    <th style="color: green;font-size: 20px;">Seat</th> -->
                     <th style="color: green;font-size: 20px;">Payment Status</th>
                     <th style="color: green;font-size: 20px;">Status</th>
-                    <th style="color: green;font-size: 20px;">Actions</th>
+                    <!-- <th style="color: green;font-size: 20px;">Actions</th> -->
                 </tr>
             </thead>
             <tbody>
                 @forelse($bookings as $b)
                     <tr class="text-center">
                         <td>{{ $b->id }}</td>
-                        <td>{{ $b->customer_id}}</td>
+                        <!-- <td>{{ $b->customer_id}}</td>
                         <td>{{ $b->flight_id}}</td>
-                        <td>{{ $b->seat_id }}</td>
+                        <td>{{ $b->seat_id }}</td> -->
                         <td>{{ $b->payment_status }}</td>
                         <td>{{ $b->status ? 'Accept' : 'Pending' }}</td>
                         <td>

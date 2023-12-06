@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use Illuminate\Http\Request;
-
 class BookingController extends Controller
 {
     /**
@@ -29,7 +28,10 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-       return redirect('bookings');
+    //     $bookingsInstance = new Booking;
+    //     $bookingsInstance->payment_status=$request->payment_status;
+    //     $bookingsInstance->status=$request->status;
+    //    return redirect()->route('bookings.index');
     }
 
     /**
@@ -66,6 +68,6 @@ class BookingController extends Controller
     public function destroy(Booking $booking)
     {
            $booking->delete();
-        return redirect('bookings')->with('message','Data deleted successfully');
+        return redirect()->route('bookings.index')->with('message','Data deleted successfully');
     }
 }

@@ -7,14 +7,7 @@ use Illuminate\Http\Request;
 
 class AirplaneController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    // public function index()
-    // {
-    //      $airplanes = Airplane::latest()->paginate(4);
-    //     return view('backend.airplanes.index', ['bookings' => $airplanes]);
-    // }
+    
 
     public function index()
 {

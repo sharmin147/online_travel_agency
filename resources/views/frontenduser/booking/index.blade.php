@@ -1,5 +1,5 @@
 @extends('frontenduser.layout.app')
-@section('title','Sign Up')
+@section('title','Booking invoice')
 @section('content')
 <div class="container-fluid bg-registration">
     <div class="container py-2">

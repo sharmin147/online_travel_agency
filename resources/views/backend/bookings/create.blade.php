@@ -9,14 +9,14 @@
                 <label for="customer_id">Customer Id</label>
                 <input type="text" name="customer_id" id="customer_id" class="form-control">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="seat_id">Flight Id</label>
                 <input type="number" name="flight_id" id="flight_id" class="form-control">
             </div>
             <div class="form-group">
                 <label for="seat_id">Seat Id</label>
                 <input type="number" name="seat_id" id="seat_id" class="form-control">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="payment_status">Payment Status</label>
                 <select name="payment_status" id="payment_status" class="form-control">

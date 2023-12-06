@@ -29,13 +29,6 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $bookingsInstance = new Booking;
-        $bookingsInstance->customer_id=$request->customer_id;
-        $bookingsInstance->flight_id=$request->flight_id;
-        $bookingsInstance->seat_id=$request->seat_id;
-        $bookingsInstance->payment_status=$request->payment_status;
-        $bookingsInstance->status=$request->status;
-        $bookingsInstance->save();
        return redirect('bookings');
     }
 
@@ -61,13 +54,10 @@ class BookingController extends Controller
      */
     public function update(Request $request, Booking $booking)
     {
-        $booking->customer_id=$request->customer_id;
-        $booking->flight_id=$request->flight_id;
-        $booking->seat_id=$request->seat_id;
         $booking->payment_status=$request->payment_status;
         $booking->status=$request->status;
         $booking->save();
-       return redirect('bookings');
+       return redirect()->route('bookings.index');
     }
 
     /**

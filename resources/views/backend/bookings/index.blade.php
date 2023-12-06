@@ -18,9 +18,9 @@
             <thead class="text-center">
                 <tr>
                     <th style="color: green;font-size: 20px;">Id</th>
-                    <th style="color: green;font-size: 20px;">Customer Id</th>
-                    <th style="color: green;font-size: 20px;">Flight Id</th>
-                    <th style="color: green;font-size: 20px;">Seat Id</th>
+                    <th style="color: green;font-size: 20px;">Customer</th>
+                    <th style="color: green;font-size: 20px;">Flight</th>
+                    <th style="color: green;font-size: 20px;">Seat</th>
                     <th style="color: green;font-size: 20px;">Payment Status</th>
                     <th style="color: green;font-size: 20px;">Status</th>
                     <th style="color: green;font-size: 20px;">Actions</th>

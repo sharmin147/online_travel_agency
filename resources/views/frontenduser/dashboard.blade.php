@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="wrapper d-flex align-items-stretch">
-   <nav id="sidebar" style="width: 200px; height: 500px;"> <!-- Set the width as desired -->
+   <nav id="sidebar" style="width: 200px; height: 500px;"> 
         <div class="custom-menu">
             <button type="button" id="sidebarCollapse" class="btn btn-primary">
                 <i class="fa fa-bars"></i>

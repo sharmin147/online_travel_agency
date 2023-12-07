@@ -1,63 +1,40 @@
 @extends('frontenduser.layout.app')
 @section('content')
 
-<style>
-    .card-img-top {
-        height: 250px; 
-        object-fit: cover;
-    }
-</style>
-
-<!-- Destination Start -->
-<div class="container-fluid py-5">
-    <div class="container pt-5 pb-3">
-        <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Dashboard</h6>
-            <h1>Explore The Journey</h1>
+<div class="wrapper d-flex align-items-stretch">
+   <nav id="sidebar" style="width: 200px; height: 500px;"> <!-- Set the width as desired -->
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
         </div>
-
-        <!-- Booking Type Cards -->
-        <div class="row">
-            <!-- Flights -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{asset('public/frontend/img/istockphoto-1446029557-612x612.jpg')}}" alt="Flights Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Flights</h5>
-                        <p class="card-text">Find and book flights to your destination.</p>
-                        <a href="#" class="btn btn-primary">Explore Flights</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hotels -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{asset('public/frontend/img/istockphoto-854964648-612x612.jpg')}}" alt="Hotels Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Tours</h5>
-                        <p class="card-text">Discover comfortable stays for your trip.</p>
-                        <a href="#" class="btn btn-primary">Explore Tours</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tours -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{asset('public/frontend/img/plane2.jpg')}}" alt="Tours Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Booking</h5>
-                        <p class="card-text">Explore exciting tours and activities and trip.</p>
-                        <a href="#" class="btn btn-primary">Explore Bookings</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more cards for additional booking types -->
-        </div>
-    </div>
+        <h1><a href="index.html" class="logo">OTA</a></h1>
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+                <a href="{{ url('/') }}"><span class="fa fa-home mr-3"></span> Homepage</a>
+            </li>
+            <li>
+                <a href="{{ route('user.dashboard') }}"><span class="fa fa-user mr-3"></span> Dashboard</a>
+            </li>
+            <li>
+                <a href="{{ route('user-booking.index') }}"><span class="fa fa-sticky-note mr-3"></span>Your Booking</a>
+            </li>
+            <li>
+                <a href="{{ route('user-booking.create') }}"><span class="fa fa-calendar-plus-o mr-3"></span>Book Now</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-shopping-cart mr-3"></span> My Order</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-info-circle mr-3"></span> Information</a>
+            </li>
+        </ul>
+    </nav>
 </div>
-<!-- Additional sections for bookings, user information, etc. could be added here -->
+ 
 @endsection
+
+
 
 

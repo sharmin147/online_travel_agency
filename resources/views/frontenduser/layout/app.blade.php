@@ -24,6 +24,12 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('public/frontend/css/style.css')}}" rel="stylesheet">
+
+    <!-- new add -->
+     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{asset('public/css/style.css')}}">
 </head>
 
 <body>
@@ -86,6 +92,7 @@
         </div>
     </div>
     <!-- Navbar End -->
+    
 @yield('content')
  <!-- Footer Start -->
  <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
@@ -178,6 +185,10 @@
 
 <!-- Template Javascript -->
 <script src="{{asset('public/frontend/js/main.js')}}"></script>
+    <script src="{{asset('public/js/jquery.min.js')}}"></script>
+    <script src="{{asset('public/js/popper.js')}}"></script>
+    <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('public/js/main.js')}}"></script>
 @stack('scripts')
 </body>
 

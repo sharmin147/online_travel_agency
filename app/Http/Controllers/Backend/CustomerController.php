@@ -41,7 +41,7 @@ class CustomerController extends Controller
         $customersInstance->action = $request->action;
         $customersInstance->save();
 
-        return redirect('customers');
+        return redirect()->route('customers.index');
     }
 
     /**
@@ -75,7 +75,7 @@ class CustomerController extends Controller
         $customer->action = $request->action;
         $customer->save();
 
-        return redirect('customers');
+        return redirect()->route('customers.index');
     }
 
     /**
@@ -84,7 +84,7 @@ class CustomerController extends Controller
     public function destroy(Customer $customer)
     {
         $customer->delete();
-        return redirect('customers')->with('message','Data deleted successfully');
+        return redirect()->route('customers.index')->with('message','Data deleted successfully');
     }
 
 }

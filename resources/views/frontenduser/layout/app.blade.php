@@ -29,7 +29,7 @@
      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{{asset('public/css/style.css')}}">
+		 <!-- <link rel="stylesheet" href="{{asset('public/css/style.css')}}"> -->
 </head>
 
 <body>
@@ -167,7 +167,7 @@
 
 
 <!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+ <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a> -->
 
 
 <!-- JavaScript Libraries -->
@@ -182,14 +182,14 @@
 <!-- Contact Javascript File -->
 <script src="{{asset('public/frontend/mail/jqBootstrapValidation.min.js')}}"></script>
 <script src="{{asset('public/frontend/mail/contact.js')}}"></script>
-
+@stack('scripts')
 <!-- Template Javascript -->
 <script src="{{asset('public/frontend/js/main.js')}}"></script>
     <script src="{{asset('public/js/jquery.min.js')}}"></script>
     <script src="{{asset('public/js/popper.js')}}"></script>
     <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('public/js/main.js')}}"></script>
-@stack('scripts')
+
 </body>
 
 </html>

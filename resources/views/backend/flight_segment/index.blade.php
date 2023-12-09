@@ -58,10 +58,10 @@
                                 <td>{{$p->airline}}</td>
 
                                 <td class="white-space-nowrap">
-                                   <button class="btn btn-sm btn-primary" onclick="window.location.href='{{ route('flight_segment.edit', encryptor('encrypt', $p->id)) }}'">
+                                   <button class="btn btn-sm btn-primary" onclick="window.location.href='{{ route('flight_segment.edit',  $p->id) }}'">
                                         <i class="fa fa-edit"></i>
                                       </button>
-                                       <form id="form{{$p->id}}" action="{{ route('flight_segment.destroy', encryptor('encrypt', $p->id)) }}" method="post">
+                                       <form id="form{{$p->id}}" action="{{ route('flight_segment.destroy', $p->id) }}" method="post">
                                        @csrf
                                         @method('delete')
 

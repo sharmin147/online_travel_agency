@@ -63,8 +63,11 @@ class FlightSegmentController extends Controller
      */
     public function edit(string $id)
     {
-             $flight_segment = FlightSegment::find($id);
-         return view('backend.flight_segment.edit', compact('flight_segment'));
+        $flight_segment = FlightSegment::find($id);
+        $airplane = Airplane::get();
+        $flightRoute = flightRoute::get();
+        $airport = Ariport::get();
+         return view('backend.flight_segment.edit', compact('flight_segment','airplane','flightRoute','airport'));
     }
 
     /**

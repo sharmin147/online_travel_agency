@@ -62,13 +62,13 @@ class BookingController extends Controller
         if(count($booked) > 0)
             $availabla_seat=($seat[0] - $booked[0]);
         else
-            $availabla_seat=$seat[0];
+            $availabla_seat=$seat[0] ?? 0;
 
         $price=FlightPrice::where('flight_category_id',$flight_category_id)
                             ->where('flight_class_id',$flight_class_id)
                             ->where('flight_route_id',$flight->flight_route_id)
                             ->pluck('price')->toArray();
-        $data=array("available"=>$availabla_seat,"price"=>$price[0]);
+        $data=array("available"=>$availabla_seat,"price"=>$price[0] ?? 0);
         
         print_r(json_encode($data));
     }

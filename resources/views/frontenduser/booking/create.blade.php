@@ -212,7 +212,7 @@
         dataType: 'json',
         data: {flight_id: flight_id,flight_category_id:flight_category_id,flight_class_id:flight_class_id},
         success: function(res){
-          if(res){
+          if(res && res.available > 0){
             $('.seat_data').show()
             $('.no-seat_data').hide();
             $('.available_seat').html(res.available);

@@ -1,7 +1,7 @@
 @extends('frontenduser.layout.app')
 @section('content')
 
-<div class="wrapper d-flex align-items-stretch">
+<!-- <div class="wrapper d-flex align-items-stretch">
    <nav id="sidebar" style="width: 200px; height: 500px;"> 
         <div class="custom-menu">
             <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -31,7 +31,7 @@
             </li>
         </ul>
     </nav>
-</div><br><br>
+</div><br><br> -->
  
 @endsection
 

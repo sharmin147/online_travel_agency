@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('front_payments', function (Blueprint $table) {
             $table->id();
+            $table->integer('booking_id')->nullable();
+            $table->decimal('amount', 10, 2)->nullable();
+            $table->string('payment_method')->nullable();
+            $table->decimal('total_amount',10,2)->nullable();
             $table->timestamps();
         });
     }

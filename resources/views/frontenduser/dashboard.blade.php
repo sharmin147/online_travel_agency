@@ -1,38 +1,41 @@
 @extends('frontenduser.layout.app')
 @section('content')
 
-<!-- <div class="wrapper d-flex align-items-stretch">
-   <nav id="sidebar" style="width: 200px; height: 500px;"> 
-        <div class="custom-menu">
-            <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                <i class="fa fa-bars"></i>
-                <span class="sr-only">Toggle Menu</span>
-            </button>
+
+<div class="dashboard">
+   <main class="container-fluid">
+        <div class="row justify-content-end">
+            <div class="col-md-6 bg-secondary text-dark p-4">
+        
+                <h3>Agency Information</h3>
+                <p>Total Customers: 500</p>
+                <p>Popular Destinations: Rome, Tokyo, New York</p>
+             
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Statistics</h5>
+                        <div class="card-text">
+                            <p>Total Bookings: 1000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 bg-success text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Bookings</h5>
+                        <div class="card-text">
+                            <p>Booking #123 - Destination: Paris - Date: 2023-12-10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
         </div>
-        <h3><a href="index.html" class="logo">OTA</a></h3>
-        <ul class="list-unstyled components mb-5">
-            <li class="active">
-                <a href="{{ url('/') }}"><span class="fa fa-home mr-3"></span> Homepage</a><br><br>
-            </li>
-            <li>
-                <a href="{{ route('user.dashboard') }}"><span class="fa fa-user mr-3"></span> Dashboard</a><br><br>
-            </li>
-            <li>
-                <a href="{{ route('user-booking.index') }}"><span class="fa fa-sticky-note mr-3"></span>Your Booking</a><br><br>
-            </li>
-            <li>
-                <a href="{{ route('user-booking.create') }}"><span class="fa fa-calendar-plus-o mr-3"></span>Book Now</a><br><br>
-            </li>
-            <li>
-                <a href="#"><span class="fa fa-shopping-cart mr-3"></span> My Order</a><br><br>
-            </li>
-            <li>
-                <a href="#"><span class="fa fa-info-circle mr-3"></span> Information</a>
-            </li>
-        </ul>
-    </nav>
-</div><br><br> -->
- 
+    </main>
+  </div>
 @endsection
 
 

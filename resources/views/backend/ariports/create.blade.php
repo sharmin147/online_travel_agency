@@ -5,10 +5,10 @@
     <div class="col-sm-12">
         <form action="{{ route('ariports.store') }}" method="post">
             @csrf
-            {{-- <div class="form-group">
+             <!-- <div class="form-group">
                 <label for="city_id">City Id</label>
                 <input type="city_id" id="city_id" class="form-control">
-            </div> --}}
+            </div>  -->
 
             <div class="form-group">
                 <label for="name">Name</label>

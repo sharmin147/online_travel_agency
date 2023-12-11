@@ -24,8 +24,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('public/frontend/css/style.css')}}" rel="stylesheet">
-
-    
+<!-- add new -->
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -178,6 +178,7 @@
 <!-- Contact Javascript File -->
 <script src="{{asset('public/frontend/mail/jqBootstrapValidation.min.js')}}"></script>
 <script src="{{asset('public/frontend/mail/contact.js')}}"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 @stack('scripts')
 
 </body>

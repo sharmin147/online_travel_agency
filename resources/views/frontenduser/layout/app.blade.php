@@ -26,8 +26,8 @@
     <link href="{{asset('public/frontend/css/style.css')}}" rel="stylesheet">
 <!-- add new -->
   
-      <!-- <link rel="stylesheet" type="text/css" href="{{asset('public/invoice/bootstrap/css/bootstrap.min.css')}}" />
-         <link rel="stylesheet" type="text/css" href="{{asset('public/invoice/font-awesome/css/font-awesome.min.css')}}" /> -->
+       <link rel="stylesheet" type="text/css" href="{{asset('public/invoice/bootstrap/css/bootstrap.min.css')}}" />
+       <link rel="stylesheet" type="text/css" href="{{asset('public/invoice/font-awesome/css/font-awesome.min.css')}}" />
 </head>
 
 <body>
@@ -182,7 +182,7 @@
 <script src="{{asset('public/frontend/mail/contact.js')}}"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- add new -->
-   <!-- <script type="text/javascript" src="{{asset('public/invoice//js/jquery-1.10.2.min.js')}}"></script>
+    <!-- <script type="text/javascript" src="{{asset('public/invoice//js/jquery-1.10.2.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('public/invoice/bootstrap/js/bootstrap.min.js')}}"></script> -->
    
 @stack('scripts')

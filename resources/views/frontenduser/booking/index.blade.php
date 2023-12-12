@@ -116,7 +116,7 @@
                 </div>
                 <div class="col-xs-12 col-md-3 col-lg-3 pull-right">
                     <div class="panel panel-default height">
-                        <div class="panel-heading">Booking Address</div>
+                        <div class="panel-heading">Address</div>
                         <div class="panel-body">
                             <strong>David Peere:</strong><br>
                             1111 Army Navy Drive<br>

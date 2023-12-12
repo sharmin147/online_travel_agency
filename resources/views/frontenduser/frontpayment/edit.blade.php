@@ -26,9 +26,18 @@
                    <div class="row">
                     <div class="col-md-6 col-12">
                       <div class="form-group">
-                      <label for="payment_method">Payment Method</label>
-                      <input type="text" name="payment_method" value="{{ $frontpayment->payment_method }}" class="form-control">
-                    </div> 
+                       <label for="payment_method">Payment Method</label>
+                         <select id="payment_method" class="form-control" name="payment_method">
+                            <option value="">Select Method</option>
+                                     @forelse($payment_method as $ap)
+                                    <option value="{{$ap->id}}" @if(old('payment_method',$frontpayment->payment_method)==$ap->id) selected @endif>{{$ap->name}}</option>
+                                     @empty
+                                     @endforelse
+                                    </select>
+                                  @if($errors->has('payment_methood"'))
+                                <span class="text-danger"> {{ $errors->first('payment_method"') }}</span>
+                            @endif
+                      </div> 
                    </div>
                 </div>
                   <div class="row">

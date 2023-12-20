@@ -48,15 +48,15 @@
                                 <td class="white-space-nowrap">
                                    <button class="btn btn-sm btn-primary" onclick="window.location.href='{{ route('frontpayment.edit',  $p->id) }}'">
                                         <i class="fa fa-edit"></i>
-                                      </button>
+                                    </button>
                                        <form id="form{{$p->id}}" action="{{ route('frontpayment.destroy', $p->id) }}" method="post">
                                        @csrf
                                         @method('delete')
 
-                                  <button type="submit" class="btn btn-sm btn-danger">
-                                  <i class="fa fa-trash"></i>
-                                  </button>
-                                  </form>
+                                     <button type="submit" class="btn btn-sm btn-danger">
+                                     <i class="fa fa-trash"></i>
+                                     </button>
+                                     </form>
                                 </td>
                             </tr>
                             @empty

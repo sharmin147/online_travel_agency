@@ -10,8 +10,7 @@
                 <h3>Agency Information</h3>
                 <p>Total Customers: 500</p>
                 <p>Popular Destinations: Rome, Tokyo, New York</p>
-             
-            </div>
+             </div>
             <div class="col-md-3">
                 <div class="card h-100 bg-primary text-white">
                     <div class="card-body">
@@ -32,10 +31,9 @@
                     </div>
                 </div>
             </div>
-        
         </div>
-    </main>
-  </div>
+    </main> 
+    </div>
 @endsection
 
 

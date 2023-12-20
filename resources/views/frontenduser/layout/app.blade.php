@@ -26,8 +26,8 @@
     <link href="{{asset('public/frontend/css/style.css')}}" rel="stylesheet">
 <!-- add new -->
   
-       <link rel="stylesheet" type="text/css" href="{{asset('public/invoice/bootstrap/css/bootstrap.min.css')}}" />
-       <link rel="stylesheet" type="text/css" href="{{asset('public/invoice/font-awesome/css/font-awesome.min.css')}}" />
+       <!-- <link rel="stylesheet" type="text/css" href="{{asset('public/invoice/bootstrap/css/bootstrap.min.css')}}" />
+       <link rel="stylesheet" type="text/css" href="{{asset('public/invoice/font-awesome/css/font-awesome.min.css')}}" /> -->
 </head>
 
 <body>
@@ -82,6 +82,7 @@
                         <a href="{{ route('user-booking.index') }}" class="nav-item nav-link {{ request()->is('user/user-booking') ? 'active' : '' }}">Your Booking List</a>
                         <a href="{{ route('user-booking.create') }}" class="nav-item nav-link {{ request()->is('user/user-booking/create') ? 'active' : '' }}">Book now</a>
                         <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">My order</a>
+                       
                         
                     </div>
                 </div>

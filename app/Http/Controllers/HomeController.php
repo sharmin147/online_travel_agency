@@ -29,7 +29,6 @@ class HomeController extends Controller
         return view('frontend.destination');
 
     }
-
     public function contact(){
         return view('frontend.contact');
     }

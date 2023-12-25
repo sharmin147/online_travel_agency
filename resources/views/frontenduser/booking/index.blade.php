@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-3 col-lg-3">
+                 <div class="col-xs-12 col-md-3 col-lg-3">
                     <div class="panel panel-default height">
                         <div class="panel-heading">Order Preferences</div>
                         <div class="panel-body">

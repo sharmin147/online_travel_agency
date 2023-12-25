@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div class="card h-100 bg-success text-white">
                     <div class="card-body">
                         <h5 class="card-title">Recent Bookings</h5>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main> 
     </div>

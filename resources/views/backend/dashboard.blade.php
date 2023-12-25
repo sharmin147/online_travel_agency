@@ -222,7 +222,7 @@
                               </div>
                               <div class="mr-auto text-sm-right pt-2 pt-sm-0">
                                 <p class="text-muted">50 minutes ago</p>
-                                <p class="text-muted mb-0">27 tasks, 4 issues </p>
+                                <p class="text-muted mb-0">227 tasks, 4 issues </p>
                               </div>
                             </div>
                           </div>

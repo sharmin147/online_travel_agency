@@ -29,7 +29,7 @@
                         <td>{{ $b->name}}</td>
                         <td>
                          <a href="{{ route('city.edit', $b->id) }}" class="btn btn-primary btn-sm">
-                            <i class="fa fa-edit"></i> Ediit
+                            <i class="fa fa-edit"></i> Edit
                         </a>
                             <form action="{{ route('city.destroy', $b->id) }}" method="post" style="display: inline;">
                                 @csrf

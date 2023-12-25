@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Statistics</h5>
                         <div class="card-text">
-                            <p>Total Bookings:1000</p>bn
+                            <p>Total Bookings:1000</p>
                         </div>
                     </div>
                 </div>

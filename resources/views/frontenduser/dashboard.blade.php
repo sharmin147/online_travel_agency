@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Recent Bookings</h5>
                         <div class="card-text">
-                            <p>Booking #12345 - Destination: Paris - Date: 2023-12-10</p>
+                            <p>Booking #1234 - Destination: Paris - Date: 2023-12-10</p>
                         </div>
                     </div>
                 </div>

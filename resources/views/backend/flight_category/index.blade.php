@@ -22,7 +22,7 @@
                     <th style="color: green;">Description</th>
                     <th style="color: green;">Baggage Allowance</th>
                     <th style="color: green;">Refundable</th>
-                    <th style="color: green;">Actions</th>
+                    <th style="color: green;">Action</th>
                 </tr>
             </thead>
             <tbody>

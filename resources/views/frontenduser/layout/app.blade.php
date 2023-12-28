@@ -79,9 +79,9 @@
                     <div class="navbar-nav ml-auto py-0">
                     <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
                     <a href="{{ route('user.dashboard') }}" class="nav-item nav-link {{ request()->is('user/dashboard') ? 'active' : '' }}">Dashboard</a>
-                        <a href="{{ route('user-booking.index') }}" class="nav-item nav-link {{ request()->is('user/user-booking') ? 'active' : '' }}">Your Booking List</a>
+                        {{-- <a href="{{ route('user-booking.index') }}" class="nav-item nav-link {{ request()->is('user/user-booking') ? 'active' : '' }}">Your Booking List</a> --}}
                         <a href="{{ route('user-booking.create') }}" class="nav-item nav-link {{ request()->is('user/user-booking/create') ? 'active' : '' }}">Book now</a>
-                        <a href="http://localhost:8080/" class="nav-item nav-link">My order</a>
+                        <a href="http://localhost:8081/{{currentUserId()}}" class="nav-item nav-link">My order</a>
                     </div>
                 </div>
 

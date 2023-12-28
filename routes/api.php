@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\BookingController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,4 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('booking',App\Http\Controllers\Api\BookingController::class)->only(['index','store','show','update','destroy']);
+Route::get('booking/{uid}',[BookingController::class,'index']);
+Route::get('booking_single/{id}',[BookingController::class,'show']);
+//Route::resource('booking',App\Http\Controllers\Api\BookingController::class)->only(['index','store','show','update','destroy']);

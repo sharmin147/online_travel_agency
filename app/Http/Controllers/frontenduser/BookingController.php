@@ -92,6 +92,7 @@ class BookingController extends Controller
         $data->status=0;
         if($data->save()){
             $pay=new Payment;
+            $pay->booking_id=$data->id;
             $pay->customer_id=$data->customer_id;
             $pay->amount=$request->amount;
             $pay->payment_method="Online Payment";

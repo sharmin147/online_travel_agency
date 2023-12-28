@@ -3,13 +3,6 @@
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
-use App\Models\City;
-use App\Models\FlightClass;
-use App\Models\FlightCategory;
-use App\Models\flightRoute;
-use App\Models\FlightSegment;
-use App\Models\AirplaneSeat;
-use App\Models\FlightPrice;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 
@@ -18,9 +11,9 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $r)
+    public function index($r)
     {
-        $bookings = Booking::latest()->get();
+        $bookings = Booking::where('customer_id',$r)->latest()->get();
         $data=array();
         if($bookings){
             foreach($bookings as $b){
@@ -41,28 +34,18 @@ class BookingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        
-    }
-    public function store()
-    {
-        
-    }
-
-   
-    /**
      * Display the specified resource.
      */
     public function show($id)
     {
         $b = Booking::find($id);
+        $pay = Payment::where('booking_id',$b->id)->first()->toArray();
         $data=array();
         if($b){
-                $data=array(
+                $data['flight']=array(
                     'id'=>$b->id,
+                    'customer'=>$b->customer?->name,
+                    'email'=>$b->customer?->email,
                     'flight'=>$b->flight?->flight_number,
                     'sclass'=>$b->sclass?->name,
                     'booking_date'=>$b->booking_date,
@@ -72,7 +55,7 @@ class BookingController extends Controller
                     'total_amount'=>$b->total_amount,
                     'payment_status'=>$b->payment_status?true:false
                 );
-            
+                $data['payment']=$pay;
         }
         return response($data, 200);
     }

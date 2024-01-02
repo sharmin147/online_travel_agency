@@ -1,4 +1,4 @@
-@extends('frontenduser.frontpayment')
+ @extends('frontenduser.frontpayment')
 @section('title',trans('frontend Create'))
 @section('page',trans('Create'))
 @section('content')

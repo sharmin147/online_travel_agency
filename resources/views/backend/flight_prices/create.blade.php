@@ -23,7 +23,7 @@
                     @forelse($fclass as $cat)
                         <option value="{{$cat->id}}" @if(old('flight_class_id')==$cat->id) selected @endif>{{$cat->name}}</option>
                     @empty
-
+                    
                     @endforelse
                 </select>
             </div>
@@ -49,8 +49,7 @@
                     <option value="0">Pending</option>
                 </select>
             </div>
-
-            <button class="btn btn-primary" type="submit">Save</button>
+           <button class="btn btn-primary" type="submit">Save</button>
         </form>
     </div>
 </div>

@@ -24,7 +24,7 @@ use App\Http\Controllers\Backend\FlightPriceController;
 use App\Http\Controllers\frontenduser\AuthController;
 use App\Http\Controllers\frontenduser\DashboardController;
 use App\Http\Controllers\frontenduser\BookingController as userbooking;
-use App\Http\Controllers\frontenduser\FrontPaymentController as userpayment;
+
 
 
 /*

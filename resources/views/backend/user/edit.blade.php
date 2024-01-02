@@ -3,7 +3,7 @@
 @section('pageTitle',trans('Update Users'))
 @section('pageSubTitle',trans('Update'))
 @section('content')
-  <!-- // Basic multiple Column Form section start -->
+  
     <section id="multiple-column-form">
         <div class="row match-height">
             <div class="col-12">
@@ -123,7 +123,6 @@
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
-
                                     </div>
                                 </div>
                             </form>

@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+ 
     public function index($r)
     {
         $bookings = Booking::where('customer_id',$r)->latest()->get();
@@ -33,9 +31,7 @@ class BookingController extends Controller
         return response($data, 200);
     }
 
-    /**
-     * Display the specified resource.
-     */
+ 
     public function show($id)
     {
         $b = Booking::find($id);
@@ -60,18 +56,13 @@ class BookingController extends Controller
         return response($data, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
           $bookings = Booking::find($id);
          return view('backend.bookings.edit', compact('bookings'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+  
     public function update(Request $request, Booking $booking)
     {
         $booking->customer_id=$request->customer_id;
@@ -83,9 +74,7 @@ class BookingController extends Controller
        return redirect('bookings');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+  
     public function destroy(Booking $booking)
     {
            $booking->delete();

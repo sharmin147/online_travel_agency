@@ -1,7 +1,5 @@
 @extends('frontenduser.layout.app')
 @section('content')
-
-
 <div class="dashboard">
    <main class="container-fluid">
         <div class="row justify-content-end">

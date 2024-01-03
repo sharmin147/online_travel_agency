@@ -40,7 +40,7 @@
                                @endif
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Your password" required="required" id="password" name="password"  value="{{old('password')}}"/>
+                                <input type="password" class="form-control p-4" placeholder="Your password" required="required" id="password" name="password"  value="{{old('password')}}"/>
                                   @if($errors->has('password'))
                                     <small class="d-block text-danger">
                                  {{$errors->first('password')}}

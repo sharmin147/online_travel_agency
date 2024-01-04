@@ -31,7 +31,7 @@
                             <th>{{$b->qty}}</th>
                             <th>{{$b->total_amount}}</th>
                             <th>
-                              <a href="" class="btn btn-primary">Invoice</a>
+                              <a href="" class="btn btn-primary">Invoice</a> 
                             </th>
                           </tr>
                         @empty

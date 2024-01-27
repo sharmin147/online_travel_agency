@@ -24,7 +24,7 @@ use App\Http\Controllers\Backend\FlightPriceController;
 use App\Http\Controllers\frontenduser\AuthController;
 use App\Http\Controllers\frontenduser\DashboardController;
 use App\Http\Controllers\frontenduser\BookingController as userbooking;
-use App\Http\Controllers\frontenduser\FrontPaymentController as userpayment;
+
 
 
 /*
@@ -102,6 +102,6 @@ Route::middleware(['checkuser'])->prefix('user')->group(function(){
     Route::resource('user-booking',userbooking::class);
     Route::get('flight_search', [userbooking::class,'flight_search'])->name('flight_search');
     Route::get('flight_seat_search', [userbooking::class,'flight_seat_search'])->name('flight_seat_search');
-    Route::resource('user-payment',userpayment::class);
+    // Route::resource('user-payment',userpayment::class);
 });
 

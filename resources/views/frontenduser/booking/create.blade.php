@@ -43,7 +43,6 @@
                                       @endif
                                   </div>
                               </div>
-                              
                               <div class="col-sm-4 col-12">
                                 <div class="form-group">
                                   <label for="to">Travel Date</label>
@@ -55,8 +54,8 @@
                               </div>
                               <div class="col-sm-4 col-12">
                                 <div class="form-group">
-                                  <label for="is_direct_flight">Is direct flight</label>
-                                  <select id="is_direct_flight" class="form-control p-2" name="is_direct_flight">
+                                   <label for="is_direct_flight">Is direct flight</label>
+                                     <select id="is_direct_flight" class="form-control p-2" name="is_direct_flight">
                                       <option value="1" @if(old('is_direct_flight')==1) selected @endif>Yes</option>
                                       <option value="0" @if(old('is_direct_flight')==0) selected @endif>No</option>
                                   </select>
@@ -115,7 +114,6 @@
                                 </div>
                               </div>
                             </div>
-
                             <div class="row no-seat_data" style="display:none">
                               <div class="col-12">
                                 <h3 class="text-center">No seat available under this class</h3>
@@ -158,8 +156,7 @@
                                   </div>
                                 </div>
                               </div>
-                              
-                            </div>
+                          </div>
                             <div>
                               <button class="btn btn-primary btn-block py-3" type="submit">Submit</button>
                             </div>

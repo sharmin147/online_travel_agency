@@ -18,9 +18,9 @@
             <thead class="text-center">
                 <tr>
                     <th>ID</th>
-                    <th>Flight Category Id</th>
-                    <th>Flight Class Id</th>
-                    <th>Flight Route Id</th>
+                    <th>Flight Category</th>
+                    <th>Flight Class</th>
+                    <th>Flight Route</th>
                     <th>Price</th>
                     <th>Status</th>
                     <th>Actions</th>

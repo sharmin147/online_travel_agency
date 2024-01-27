@@ -15,18 +15,14 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
         $bookings = Booking::where('customer_id',currentUserId())->latest()->paginate(4);
         return view('frontenduser.booking.index', ['bookings' => $bookings]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+  
     public function create()
     {
         $city = City::get();
@@ -73,9 +69,7 @@ class BookingController extends Controller
         print_r(json_encode($data));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+   
     public function store(Request $request)
     {
         
@@ -92,6 +86,7 @@ class BookingController extends Controller
         $data->status=0;
         if($data->save()){
             $pay=new Payment;
+            $pay->booking_id=$data->id;
             $pay->customer_id=$data->customer_id;
             $pay->amount=$request->amount;
             $pay->payment_method="Online Payment";
@@ -104,26 +99,15 @@ class BookingController extends Controller
         return redirect()->route('user-booking.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Booking $booking)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
+   
     public function edit(string $id)
     {
           $bookings = Booking::find($id);
          return view('backend.bookings.edit', compact('bookings'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+   
     public function update(Request $request, Booking $booking)
     {
         $booking->customer_id=$request->customer_id;
@@ -135,12 +119,10 @@ class BookingController extends Controller
        return redirect('bookings');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(Booking $booking)
     {
-           $booking->delete();
+        $booking->delete();
         return redirect('bookings')->with('message','Data deleted successfully');
     }
 }

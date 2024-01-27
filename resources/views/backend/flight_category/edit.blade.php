@@ -14,8 +14,7 @@
                         <option value="Round Trip" @if($flight_category->name == 'Round Trip') selected @endif>Round Trip</option>
                    </select>
                 </div>
-
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="descripton">Description</label>
                     <input type="text" name="description" value="{{ $flight_category->description }}" class="form-control">
                 </div>
@@ -30,8 +29,7 @@
                         <option value="0" {{ $flight_category->refundable== "0" ? "selected" : "" }}>No</option>
                     </select>
                 </div>
-
-                <button class="btn btn-primary" type="submit">Save</button>
+                 <button class="btn btn-primary" type="submit">Save</button>
             </form>
         </div>
     </div>

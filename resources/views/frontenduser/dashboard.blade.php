@@ -1,7 +1,5 @@
 @extends('frontenduser.layout.app')
 @section('content')
-
-
 <div class="dashboard">
    <main class="container-fluid">
         <div class="row justify-content-end">
@@ -16,7 +14,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Statistics</h5>
                         <div class="card-text">
-                            <p>Total Bookings: 1000</p>
+                            <p>Total Bookings:1000</p>
                         </div>
                     </div>
                 </div>
@@ -26,7 +24,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Recent Bookings</h5>
                         <div class="card-text">
-                            <p>Booking #123 - Destination: Paris - Date: 2023-12-10</p>
+                            <p>Booking #1234 - Destination: Paris - Date: 2023-12-10</p>
                         </div>
                     </div>
                 </div>

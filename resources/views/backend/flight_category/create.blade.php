@@ -13,7 +13,6 @@
                     <option value="Round trip">Round Trip</option>
                 </select>
             </div>
-
             <div class="form-group">
                 <label for="description">Description</label>
                 <textarea name="description" id="description" class="form-control"></textarea>

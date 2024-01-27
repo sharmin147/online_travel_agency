@@ -79,11 +79,9 @@
                     <div class="navbar-nav ml-auto py-0">
                     <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
                     <a href="{{ route('user.dashboard') }}" class="nav-item nav-link {{ request()->is('user/dashboard') ? 'active' : '' }}">Dashboard</a>
-                        <a href="{{ route('user-booking.index') }}" class="nav-item nav-link {{ request()->is('user/user-booking') ? 'active' : '' }}">Your Booking List</a>
+                     <!-- <a href="{{ route('user-booking.index') }}" class="nav-item nav-link {{ request()->is('user/user-booking') ? 'active' : '' }}">Your Booking List</a> -->
                         <a href="{{ route('user-booking.create') }}" class="nav-item nav-link {{ request()->is('user/user-booking/create') ? 'active' : '' }}">Book now</a>
-                        <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">My order</a>
-                       
-                        
+                        <a href="http://localhost:8081/{{currentUserId()}}" class="nav-item nav-link">My order</a>
                     </div>
                 </div>
 
@@ -183,11 +181,9 @@
 <script src="{{asset('public/frontend/mail/contact.js')}}"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- add new -->
-    <!-- <script type="text/javascript" src="{{asset('public/invoice//js/jquery-1.10.2.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/invoice/bootstrap/js/bootstrap.min.js')}}"></script> -->
+ 
    
 @stack('scripts')
 
 </body>
-
 </html>

@@ -12,9 +12,7 @@ use Toastr;
 
 class AuthController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+ 
    public function signUpForm(){
         return view('frontenduser.auth.register');
     }
